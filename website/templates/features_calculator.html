@@ -1,0 +1,52 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Contact{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Fonctionnalités – Diabphone Calculateur</h1>
+
+Les fonctionnalités de Carb Counter sont identiques à celles du module « Insulinothérapie fonctionnelle » du carnet:
+
+
+ paramétrage de coefficients ou ratios insuline/glucides en:
+
+ unités d’insuline pour 10g de glucides (U/10g)
+ unités d’insuline pour 15g de glucides (U/15g)
+ unités d’insuline pour 20g de glucides (U/20g)
+ grammes de glucides par Unité d’insuline (g/U)
+
+ réglage des coefficients ou ratios insuline/glucides pour chacun des 3 repas principaux
+
+ petit-déjeuner, déjeuner, dîner
+
+ réglage possible de coefficients ou ratios insuline/glucides pour 3 collations
+
+ matinée, après-midi, soirée
+
+ calcul de la dose d’insuline des repas ou des collations
+
+ base alimentaire simplifiée permettant la saisie rapide d’un repas et le compte des glucides qu’il contient
+
+ saisie d’un repas en fonction de la catégorie des aliments (féculents, légumes, pain…) et de leur pourcentage en glucides (sous-catégories)
+ ajout, modification ou suppression possible de sous-catégories d’aliments
+ personnalisation de la base alimentaire grâce à la saisie possible de vos aliments favoris
+ mémorisation de repas types
+ saisie du poids des aliments en grammes ou en portions, de taille réglable par catégorie d’aliments
+
+ intégration complète au carnet Diabphone si vous achetez le carnet sous forme d’achat « In App »
+</body>
+
+{% endblock center-page %}
+
+

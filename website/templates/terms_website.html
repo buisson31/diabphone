@@ -1,0 +1,84 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Conditions d’utilisation du site</h1>
+
+<p>
+
+Ici sont décrites les conditions d’utilisation du site web pour ses visiteurs.
+Tout visiteur du site s’engage à prendre connaissance des conditions générales d’utilisation et à les respecter.
+Diabphone© se réserve le droit de modifier à tout moment ces conditions générales d’utilisation, par exemple pour faire face à des évolutions du logiciel ou du contexte légal. L’unique version des conditions générales d’utilisation est disponible sur le site www.diabphone.com et les visiteurs sont tenus de s’y référer à chaque connexion.
+
+2. Contenu du site
+
+Le site www.diabphone.com a pour but de renseigner sur l’application Diabphone© et sur son utilisation, de proposer un accès anonyme et sécurisé aux médecins des utilisateurs de Diabphone©, et de rediriger vers l’application sur le site de l’App Store de la société Apple.
+Diabphone© est une application fournissant une assistance d’ordre médical, et à ce titre le site peut contenir des informations ayant trait à la santé humaine. Bien que la société Diabphone© porte un soin important à la précision de ces informations, Diabphone© ne peut garantir leur exhaustivité ou leur exactitude. Elles ne doivent en aucune circonstance être utilisées pour procéder à un quelconque diagnostic médical, et ne remplacent aucunement l’avis d’un médecin qualifié. Diabphone© ne peut en aucun cas être tenu responsable d’un usage malencontreux de ces informations.
+
+3. Accès médecin
+
+La rubrique « Accès médecin » du site propose aux médecins des patients ayant souscrit à l’option « serveur » (module de sauvegarde des données) de Diabphone© de consulter le carnet d’auto-surveillance de leurs patients. Le médecin doit pour cela disposer d’un accès Internet. À la manière d’un nom d’utilisateur et d’un mot de passe, il a besoin du code anonyme ainsi que du code d’accès du patient, que ce dernier devra lui communiquer.
+
+Le médecin pourra alors choisir entre 1, 2, et 4 pages de carnet, chaque page regroupant 2 semaines de données.
+
+4. Droits de propriété intellectuelle
+
+Ce site web est la propriété de Diabphone©.
+Tout le contenu du site, y compris le texte, les images, les marques et les logos, est protégé par les lois en vigueur sur la propriété intellectuelle, et ne peut être réutilisé, copié, ou modifié sans autorisation pour un usage autre que personnel.
+
+5. Exonération de la responsabilité de Diabphone©
+
+a) Disponibilité du site web
+
+L’accès au site www.diabphone.com et à certaines de ses pages est susceptible d’être indisponible ou interrompu par Diabphone©, et d’être affecté par des éléments hors du contrôle de Diabphone© tels qu’une maintenance de l’hébergeur ou une panne de réseau Internet.
+En cas d’indisponibilité du site web et quelles que soient les conséquences d’un tel événement, l’utilisateur ne pourra se prévaloir d’un préjudice et ne pourra prétendre à aucune indemnité.
+
+b) Sites tiers
+
+Les pages de www.diabphone.com peuvent contenir des liens renvoyant vers d’autres sites internet, sur lesquels Diabphone© n’a aucun contrôle. Diabphone© n’assume aucune responsabilité quant au contenu de ces sites tiers, au contenu vers lesquels ils peuvent renvoyer, à leur mauvais fonctionnement éventuel, ou à la contamination de l’ordinateur du visiteur par un quelconque programme malveillant à travers eux.
+
+c) Contenu du site
+
+Diabphone© se réserve le droit de modifier sans préavis et à tout moment le contenu du site, notamment afin d’en améliorer la lisibilité et la précision, ou de l’adapter à des évolutions de l’application carnet d’auto-surveillance du diabète Diabphone©.
+Diabphone© fait de son mieux pour assurer l’exactitude et l’exhaustivité des informations en ligne sur le site, mais ne peut les garantir. À ce titre, Diabphone© décline toute responsabilité pour tout type de dommages causés par imperfections éventuelles du contenu du site web, imperfections qui seraient de nature totalement involontaire.
+Ce paragraphe fait écho à la section 2 « Contenu du site » de cette page. À titre de rappel, les informations d’ordre médical contenues sur le site ne peuvent aucunement se substituer à celles que peut fournir un médecin.
+
+d) Utilisation du site
+
+Les visiteurs du site www.diabphone.com admettent expressément utiliser le site sous leur responsabilité exclusive et à leurs propres risques.
+Diabphone© fait son maximum pour assurer la sécurité du site web mais ne peut la garantir, et décline toute responsabilité en cas de contamination de l’appareil du visiteur par un programme malveillant.
+
+e) Accès médecin
+
+L’accès médecin fait partie des prestations de Diabphone© lorsque le module « sauvegarde des données » est souscrit, et à ce titre la société fait son maximum afin d’assurer une disponibilité permanente de cette fonctionnalité. Néanmoins, des événements hors du contrôle de Diabphone© peuvent compromettre cette disponibilité. Par ailleurs, Diabphone© se réserve le droit de fermer à tout moment et pour une durée indéterminée le site Internet, et donc l’accès médecin. En cas d’indisponibilité de cet accès et quelles que soient les conséquences d’un tel événement, l’utilisateur ne pourra se prévaloir d’un préjudice et ne pourra prétendre à aucune indemnité.
+
+Diabphone© mène une politique de confidentialité des données contenues sur ses serveurs, et s’engage à ne jamais les dévoiler.
+
+6. Loi applicable et litiges
+
+Les présentes conditions générales d’utilisation du site seront régies, interprétées et appliquées conformément au droit français.
+À défaut d’accord amiable entre les parties concernées, Le Tribunal de Grande Instance de Toulouse sera seul compétent pour traiter tous les types de litiges ayant trait à ces conditions générales d’utilisation.
+
+7. Notifications
+
+Vous reconnaissez qu’aucun site web n’est à l’abri, dans une mesure limitée, d’inexactitudes, d’imprécisions et d’omissions, et nous faisons notre maximum pour éviter cela. Si vous souhaitez nous contacter pour nous signaler des erreurs sur le site, ou pour tout autre motif ayant trait aux présentes conditions générales d’utilisations, veuillez nous envoyer un e-mail à contact@diabphone.com.
+
+</p>
+
+</body>
+
+{% endblock center-page %}
+
+

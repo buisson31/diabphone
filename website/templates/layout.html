@@ -1,0 +1,34 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+{% block center-page %}
+
+
+<div id='head'>header: width = 100%, height = 40px</div>
+<div id='main'>
+    <div id='left'>left: width = 250px, height = 100%</div>
+    <div id='right'>right: width = 100% - 250px, height = 100%</div>
+</div>
+<div id='foot'>foot: width = 100%, height = 60px</div>
+
+
+<style>
+body   {background:#fff; position:absolute; width:100%; height:100%;}
+#main  {background:#888; height:100%; padding:60px 0 40px; box-sizing:border-box;}
+#head  {background:#f8f; position:absolute; width:100%; height:60px;}
+#left  {background:#ff8; float:left; width:250px; height:100%; overflow:scroll;}
+#right {background:#8f8; height:100%; overflow:scroll;}
+#foot  {background:#f88; position:absolute; bottom:0; width:100%; height:40px;}
+</style>
+
+
+{% endblock center-page %}
+
+

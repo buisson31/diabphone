@@ -1,0 +1,51 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Calculateur{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+	<div class="main">
+		<span class="shadow-top"></span>
+		<!-- shell -->
+		<div class="shell">
+			<div class="container">
+				<!-- testimonial -->
+				<section class="testimonial">
+					<h2><strong>Diabphone Calculateur</strong></h2>
+                    <h3>
+                    	L’application Diabphone Calculateur n’est autre que le module « Insulinothérapie fonctionnelle » du carnet d’auto-surveillance Diabphone Carnet, disponible sous une version autonome (isolée du carnet Diabphone). Elle permettra aux diabétiques de type 1 suivant un traitement par insulinothérapie fonctionnelle d’évaluer rapidement la quantité de glucides d’un repas et de calculer la dose d’insuline nécessaire afin de l’assimiler.
+						Diabphone Calculateur contient une classification alimentaire simplifiée, dans laquelle les aliments sont classés en fonction de leur type (féculents, légumes,…) et de leur contenu moyen en glucides, permettant ainsi une saisie rapide et fiable de la composition de votre repas et de son contenu en glucides.
+						Vous pouvez modifier le contenu de ces catégories à votre guise, ainsi que créer votre propre liste d’aliments préférés.
+						La dose d’insuline rapide associée à votre repas peut ensuite être calculée à partir des ratios Insuline/Glucides personnalisés, que vous avez saisis.
+						Diabphone Calculateur vous propose aussi un ajustement de la dose d’insuline en fonction de votre glycémie et de votre sensibilité à l’insuline.
+						Il est possible d’intégrer le carnet Diabphone à Diabphone Calculateur sous la forme d’un achat « In-App »!
+					</h3>
+				</section>
+				
+					<img src="/static/img/Badge_App_Store_FR.png" alt="" width="20%"/>
+
+					<img src="/static/img/calculateur_en_images1.jpg" alt="" width="100%"/>
+					<img src="/static/img/calculateur_en_images2.jpg" alt="" width="100%"/>
+					<img src="/static/img/calculateur_en_images3.jpg" alt="" width="100%"/>
+					<img src="/static/img/calculateur_en_images4.jpg" alt="" width="100%"/>
+					<img src="/static/img/calculateur_en_images5.jpg" alt="" width="100%"/>
+				
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of shell -->
+	</div>
+	<!-- end of main -->
+
+
+{% endblock center-page %}
+
+

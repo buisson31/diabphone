@@ -1,0 +1,23 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Tutorials{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Tutorials</h1>
+
+</body>
+
+{% endblock center-page %}
+
+

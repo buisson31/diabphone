@@ -1,0 +1,176 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Condition d'utilisation de Diabphone Calculateur{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+
+
+                <p><strong>CONDITIONS GÉNÉRALES D'UTILISATION ET DESCRIPTION</strong></p>
+                
+                <p>L’application Diabphone Calculateur© vous propose une aide au compte des glucides d’un repas et au calcul de la dose d’insuline correspondante, en effectuant, à votre place, les calculs nécessaires à chacune de ces opérations. Elle ne doit être téléchargée et ne doit être utilisée que <strong>si vous êtes diabétique de type 1 et que vous avez été formé à l’insulinothérapie fonctionnelle.</strong></p>
+                
+                <p><strong>1- CONDITIONS GÉNÉRALES D'UTILISATION</strong></p>
+                
+                <p><strong>Diabphone Calculateur© ne s’engage pas à rendre un conseil ou une recommandation médicale. Vous reconnaissez que l’application Diabphone Calculateur© et toute information qu’elle peut contenir ou transmettre ne peuvent jamais et n’ont pas pour but de remplacer ni l’avis d’un professionnel de santé, ni votre bon sens ou votre jugement. Vous vous engagez à ne jamais retarder la consultation d’un professionnel de santé ni à ignorer son avis médical du fait de l’utilisation de l’application Diabphone Calculateur© ou de toute information qui vous serait parvenue directement ou indirectement à travers l’application Diabphone Calculateur©. Vous reconnaissez que vous ne devez à aucun moment laisser l’application Diabphone Calculateur© influencer vos décisions d’ordre médical, et acceptez l’entière responsabilité de ces dernières.</strong></p>
+                
+                <p><strong>Mode d'emploi</strong></p>
+                
+                <p>Vous vous engagez expressément à lire attentivement, entièrement, et régulièrement le mode d’emploi de l’application Diabphone Calculateur© de manière à maîtriser complètement l’utilisation de celle-ci, et ce, avant de vous en servir. Ce mode d’emploi est disponible dans la rubrique « Info » de l’application ou sur le site web www.diabphone.com, où vous trouverez les informations nécessaires à l’utilisation de l’application Diabphone Calculateur© ainsi que des précautions d’emploi qu’il est essentiel de connaître.</p>
+                
+                <p><strong>Éducation thérapeutique</strong></p>
+                
+                <p><strong>L’utilisation de Diabphone Calculateur© ne peut en aucun cas se substituer à ou vous dispenser d’une éducation à la gestion du diabète et de son traitement. Au contraire, il vous est indispensable d'avoir bénéficié d'une éducation à la gestion du diabète et à l’insulinothérapie fonctionnelle pour utiliser Diabphone Calculateur©.</strong></p>
+                
+                <p><strong>Réglages</strong></p>
+                
+                <p>Lors de la première exécution, vous devez entrer des paramètres propres à votre diabète dans la section « Réglages », et vous vous engagez à le faire sous la supervision de votre diabétologue ou médecin traitant.</p>
+                
+                <p><strong>Limites de Diabphone Calculateur©</strong></p>
+                
+                <p>Vous acceptez le fait que l’application Diabphone Calculateur© ne peut pas prendre en compte toutes les variables qui déterminent le niveau de glycémie, et par conséquent l'obtention d'une glycémie normale ne peut être garantie. La société Diabphone, par conséquent, n’assume aucune responsabilité, d’aucune sorte, pour aucun type de dommages qui pourraient survenir lors de l'utilisation de l’application Diabphone Calculateur©, incluant des épisodes d’hypoglycémie ou d’hyperglycémies, aiguës ou chroniques, ou leurs conséquences à court, moyen ou long terme.</p>
+                <p>La retranscription exacte de vos résultats conditionne la qualité de l’analyse que vous pourrez faire de ceux-ci et des décisions que vous pourrez prendre à l’égard de votre traitement. La société Diabphone n’a aucun contrôle ni sur l’utilisation que vous ou quiconque ferez de l’application Diabphone Calculateur©, ni sur l’interprétation des informations que vous recevrez par l’intermédiaire de l’application Diabphone Calculateur©. Vous êtes seul responsable de l’utilisation que vous ferez de l’application Diabphone Calculateur© et il vous incombe exclusivement de vérifier la précision et la pertinence des informations contenues ou transmises par l’application Diabphone Calculateur© avec l’aide de votre médecin. La société Diabphone ne saurait en aucun cas être tenue pour responsable de décisions inadéquates du fait d’erreurs de retranscription ou de réglages de votre part, notamment en ce qui concerne vos glycémies et de vos doses d’insuline.</p>
+                <p><strong>L’application est fournie en l’état et sans aucune garantie d’aucune sorte. Diabphone Calculateur© ne saurait en aucun cas être tenu pour responsable d’aucun dommage d’aucune sorte dû à l’utilisation de l’application Diabphone Calculateur©, et vous vous engagez à ne vous prévaloir d’aucun préjudice dans un tel cas de figure.</strong></p>
+                <p>Le site web www.diabphone.com a un rôle dans l’utilisation de l’application Diabphone Calculateur©. Il contient un mode d’emploi que vous pouvez consulter en dehors de l’application Diabphone Calculateur©. Vous acceptez donc expressément et sans réserve les conditions d’utilisation du site web www.diabphone.com, disponibles sur ce même site.</p>
+                
+                <p><strong>Confidentialité</strong></p>
+                
+                <p>La société Diabphone s’engage expressément à ne jamais dévoiler à qui que ce soit les données personnelles des utilisateurs qui peuvent être portées à sa connaissance.</p>
+                
+                <p><strong>Modules optionnels</strong></p>
+                
+                <p>Si vous souhaitez souscrire à un module optionnel, vous devez accepter expressément et sans réserve les conditions d’utilisation du module en question. Celles-ci s’afficheront avant son chargement, si vous disposez de l'application Diabphone Calculateur©. Dans le cas contraire, consultez les avant sur le site web www.diabphone.com</p>
+                <p>Si vous souscrivez au module optionnel 'carnet d'auto-surveillance', il est inutile d'acheter également l'application 'Diabphone Carnet' qui possède les mêmes fonctionnalités</p>
+                
+                <p><strong>Propriété intellectuelle</strong></p>
+                <p>Il est absolument interdit d’extraire ou de modifier le code du programme d’une quelconque manière.</p>
+                
+                <p><strong>Litiges</strong></p>
+                <p>Les présentes Conditions d'Utilisation sont régies par la loi française. Tout litige relatif à l’utilisation de Diabphone Calculateur© sera de la compétence des juridictions de Toulouse.</p>
+                
+                
+                <p><strong>2- DESCRIPTION GÉNÉRALE DE L'APPLICATION ET DE SON FONCTIONNEMENT ET RECOMMENDATIONS</strong></p>
+                
+                <p><strong>Définitions</strong></p>
+                <p><em>L’insulinothérapie fonctionnelle</em></p>
+                <p>L’insulinothérapie fonctionnelle (ITF) est une méthode d’ajustement des doses d’insuline, réservée aux diabétiques de type 1, qui consiste à ajuster les doses d’insuline des repas en fonction de leur contenu en glucides.</p>
+                <p><em>Correction</em></p>
+                <p>On entend par « correction », aussi appelé « rattrapage », le fait de rajouter de l’insuline en cas d’hyperglycémie pour ramener plus rapidement la glycémie vers une valeur normale.</p>
+                <p>Par extension, la « correction » est aussi la quantité d’insuline que l’on peut retirer de la dose habituelle d’insuline rapide prévue lors d’un repas pour limiter le risque ultérieur d’hypoglycémie, lorsque la glycémie avant le repas est basse. On parle alors de correction négative.</p>
+                
+                <p>L’application Diabphone Calculateur© vous propose une aide au compte des glucides d’un repas et au calcul de la dose d’insuline correspondante, en effectuant, à votre place, les calculs nécessaires à chacune de ces opérations.</p>
+                
+                <p>Cette application se compose principalement :<p>
+                <ul>
+                    <li>d’une <em>table alimentaire simplifiée</em> et d’un <em>« calculateur de glucides »</em>, pour estimer rapidement le contenu en glucides de vos repas</li>
+                    <li>d’un <em>« calculateur d’insuline »</em>, pour déterminer les doses d’insuline associées à vos repas</li>
+                    <li>et d’un <em>« calculateur de correction »</em> qui propose, si votre glycémie préprandiale est élevée ou basse, une quantité d’insuline à rajouter ou à retirer pour ramener plus rapidement votre glycémie vers une valeur normale.</li>
+                </ul>
+                <p>Elle dispose en outre d’une <em>table alimentaire de référence</em>, comportant plus de 1400 aliments (Table de composition nutritionnelle des aliments Ciqual 2012), à laquelle vous pouvez faire appel pour vérifier le pourcentage de glucide d’un aliment ou que vous pouvez utiliser directement pour compter les glucides de vos repas. Vous y trouverez également la possibilité de constituer votre propre base alimentaire avec vos aliments favoris.</p>
+                
+                <p><strong>Principes de calcul et d’utilisation</strong></p>
+                <p><strong>Compte des glucides</strong></p>
+                
+                <p>Le compte des glucides de vos repas s’effectue à partir des différentes tables alimentaires et du calculateur de glucides.</p>
+                <p>Vous devrez tout d’abord sélectionner l’ensemble des aliments de votre repas qui contiennent des glucides et préciser la quantité que vous en consommez. À partir de cette sélection, l’application Diabphone Calculateur© calculera la quantité de glucides apportée par chaque aliment et par l’ensemble du repas, selon la formule suivante :</p>
+                <p><em>(poids de l’aliment n°1 x % glucides) + (poids de l’aliment n°2 x % glucides) + … etc.</em></p>
+                
+                <p><strong>Détermination de l’insuline du repas</strong></p>
+                
+                <p>La dose d’insuline asssociée au repas est déterminée en fonction des réglages des ratios insuline/glucides que vous aurez faits au préalable, du type de repas (petit-déjeuner, déjeuner, etc…) que vous aurez sélectionné, et de la quantité de glucides du repas que vous aurez saisi, selon le calcul suivant :</p>
+                <p><em>(contenu en glucides du repas) x (ratio insuline/glucides du repas)</em></p>
+                
+                <p><strong>Détermination de l’insuline de correction</strong></p>
+                
+                <p>La dose d’insuline de correction est calculée en fonction de votre glycémie avant le repas et de différents réglages que vous aurez faits au préalable, selon les formules suivantes :</p>
+                <ul>
+                    <li><em>en cas de glycémie élevée: (glycémie actuelle - objectif de correction)/sensibilité à l’insuline</em></li>
+                    <li><em>en cas de glycémie basse: (glycémie actuelle - limite inférieure des objectifs glycémiques)/sensibilité à l’insuline</em></li>
+                </ul>
+                
+                
+                <p><strong>Principes d’utilisation des tables alimentaires</strong></p>
+                
+                <p>L’application Diabphone Calculateur© a été principalement conçue pour faciliter l’estimation du contenu en glucides de vos repas, étape la plus complexe de l’insulinothérapie fonctionnelle.</p>
+                <p>Pour cela, elle a été dotée de plusieurs tables alimentaires que vous pouvez utiliser à votre convenance pour sélectionner les aliments de vos repas :</p>
+                <ul>
+                    <li>la table alimentaire simplifiée permet une sélection très rapide des principaux aliments de vos repas. Cette table n’a pas pour vocation de contenir l’ensemble des aliments que vous pouvez consommer, ni de fournir une estimation exacte du contenu en glucides des aliments qu’elle contient. En effet, dans cette table, les aliments sont classés en fonction de leur appartenance à une famille d’aliments (féculents, légumes, etc.), et de leur contenu moyen en glucides (exemples : féculents à 20%, légumes à 5%, etc.), d’où un certain degré d’approximation dans le compte des glucides des repas.</li>
+                    <li>La table alimentaire Ciqual 2012, qui est la table alimentaire française de référence, vous fournira la composition précise en glucides de plus de 1400 aliments, parmi lesquels vous pourrez sélectionner ceux de vos repas. Cette sélection se fait en fonction du nom exact de l’aliment consommé. De ce fait, la saisie du repas sera moins rapide qu’avec la table alimentaire simplifiée, mais l’estimation de son contenu en glucide plus précise.</li>
+                </ul>
+                <p>Pour plus d’information concernant la Table de composition nutritionnelle des aliments Ciqual 2012, reportez-vous au site de Agence nationale de sécurité sanitaire de l’alimentation, de l’environnement et du travail (ANSES) ou sur le site http://www.ansespro.fr/TableCIQUAL</p>
+                <p>Dans tous les cas, quelle que soit la table alimentaire utilisée, il vous faudra préciser le poids de chaque aliment que vous aurez sélectionné.</p>
+                
+                
+                <p><strong>Avertissements et recommandations</strong></p>
+                
+                <p><em>• Mode de sélection des aliments à partir de la base alimentaire simplifiée :</em><p>
+                <p>La sélection des aliments d’un repas à partir de la base alimentaire simplifiée de Diabphone Calculateur© ne se fait pas en fonction du nom des aliments mais en fonction de leur catégorie, c’est-à-dire de leur appartenance à une famille d’aliments (féculents, légumes, etc.), puis de leur sous-catégorie, caractérisée par leur contenu moyen en glucides exprimé en pourcentage (exemples : féculents à 20%, légumes à 5%, etc.). Il est donc nécessaire, pour tous les aliments que vous consommez habituellement et qui composent l’essentiel de vos repas, que vous connaissiez à quelles familles ils appartiennent ainsi que leur contenu en glucides pour utiliser l'application Diabphone Calculateur©.</p>
+                <p><strong>Il est indispensable que vous ayez été formé(e) aux aspects diététiques de l’ITF et que vous ayez acquis de solides connaissances diététiques concernant en particulier les pourcentages de glucides des aliments, avant toute utilisation de l'application Diabphone Calculateur©.</strong></p>
+                
+                <p><em>• Approximations de la <em>base alimentaire simplifiée</em> et conséquences sur le calcul de la dose d’insuline des repas&nbsp;:</em></p>
+                <p>Les noms de certains aliments usuels figurent à titre d’exemple dans la base alimentaire simplifiée, afin d’illustrer à quoi correspond telle ou telle catégorie d’aliment. Ainsi, le riz ou les pommes de terre figurent dans la sous-catégorie des féculents contenant 20% de glucides, les tomates dans celle de légumes contenant 5% de glucides. Dans la base alimentaire simplifiée, le nombre de sous-catégories a été volontairement limité pour faciliter la saisie des aliments lors des repas. Les aliments qui figurent dans la base alimentaire ont été rattachés à la sous-catégorie dont le pourcentage de glucides est le plus proche de celui habituellement décrit pour cet aliment. Le rattachement d’un aliment à une sous-catégorie ne signifie donc pas que son pourcentage de glucides est précisément celui de la sous-catégorie. De plus, le contenu en glucides d’un aliment peut varier en fonction de la variété des produits, de leur composition, de leur mode de fabrication ou de cuisson.
+                <p><strong>Par conséquent, la présence d’un aliment au sein d’une sous-catégorie reste indicative et le pourcentage de glucides des aliments figurant dans cette base n’est qu’une approximation.</strong></p>
+                <p><strong>Cette approximation influence le compte des glucides d’un repas et le calcul de la dose d’insuline réalisés par l’application Diabphone Calculateur©, qui doivent donc être considérés comme indicatifs. De ce fait, et compte tenu de la multiplicité des autres paramètres pouvant influencer votre glycémie, Diabphone Calculateur© ne peut garantir le retour à la normale de votre glycémie après un repas.</strong></p>
+                <p><strong>Ainsi, avant toute utilisation de l'application Diabphone Calculateur©, assurez-vous que les pourcentages de glucides des aliments figurant dans la base alimentaire simplifiée correspondent à ceux que vous connaissez et utilisez habituellement. Si vous constatez des différences, parlez-en à votre diabétologue ou à votre équipe soignante pour ajuster, sous leur supervision, cette base alimentaire à vos habitudes et vos besoins.</strong></p>
+                
+                <p>• Erreurs et/ou imprécisions dans la saisie des données et conséquences sur le calcul de la dose d’insuline des repas&nbsp;:</p>
+                <p>Le compte des glucides d’un repas et le calcul de la dose d’insuline correspondante dépendent de nombreux paramètres que vous devez saisir avant ou lors du repas. <strong>Des erreurs et imprécisions dans la saisie de ces données peuvent entraîner, directement ou indirectement, des inexactitudes plus ou moins importantes dans le compte des glucides et dans le calcul de la dose d’insuline des repas</strong> réalisés par l’application Diabphone Calculateur©, et être à l’origine d’hypoglycémies ou d’hyperglycémies, aiguës, répétées ou chroniques. <strong>En dépit d’un soin particulier apporté lors de conception en termes de sécurité, l’application Diabphone Calculateur© ne peut détecter les erreurs et/ou les imprécisions lors de la saisie des données.</strong></p>
+                <p><strong>La société Diabphone ne saurait en aucun cas être tenu pour responsable de décisions inadéquates, ou de dommages du fait d’erreurs ou d’imprécisions dans les réglages de l'application Diabphone Calculateur© ou la saisie des données de votre part.</strong></p>
+                
+                <p>Les principales erreurs et imprécisions figurent ci-dessous (cette liste n’est pas exhaustive):</p>
+                
+                <em>• Erreurs et imprécisions influençant le compte des glucides et, indirectement, le calcul de la dose d’insuline d’un repas&nbsp;:</em>
+                <ul>
+                    <li>Erreurs de sélection des aliments d’un repas: oubli d’un ou plusieurs aliments glucidiques entrant dans la composition de votre repas, rajout d’un ou plusieurs aliments glucidiques non consommés, sélection d’une catégorie ne correspondant pas au contenu en glucides de l’aliment consommé.</li>
+                    <li>Saisie inexacte du poids des aliments: erreur de saisie du poids de l’aliment, estimation imprécise du poids de l’aliment.</li>
+                </ul>
+                
+                <em>Erreurs et imprécisions influençant directement le calcul de la dose d’insuline d’un repas&nbsp;:</em>
+                <ul>
+                    <li>Erreur lors du réglage de la « formule de calcul ».</li>
+                    <li>Erreurs ou imprécisions lors du réglage des « ratios insuline/glucides » des repas ou des collations.</li>
+                    <li>Absence d’ajustement régulier des « ratios insuline/glucides » des repas ou des collations, qui ne correspondent plus à vos besoins.</li>
+                    <li>Erreur de saisie du type de repas ou de la collation</li>
+                    <li>Saisie d’une quantité de glucides dans une fiche d’insuline ou de glycémie du carnet de surveillance ne correspondant pas à l’horaire du repas ou de la collation prise [option carnet].</li>
+                </ul>
+                
+                <p><strong>Correction</strong></p>
+                
+                <p>Le calculateur de correction de l’application Diabphone Calculateur© a pour but de vous aider, en effectuant ces calculs à votre place. <em>En aucun cas, il ne doit influencer votre décision de faire ou de ne pas faire de correction en cas d’hyperglycémie ou de glycémie basse.</em> Vous gardez toujours la possibilité d’administrer, tout ou partie, ou de ne pas administrer la dose d’insuline calculée par le calculateur de correction en cas d'hyperglycémie. Vous gardez également la possibilité de retirer d'avantage d'insuline que la dose  calculée par le calculateur de correction en cas de glycémie basse. <em>L’administration d’insuline relève de votre propre décision : utilisez vos connaissances, votre expérience et votre jugement pour prendre cette décision.</em></p>
+                
+                <p><strong>La dose d’insuline de correction calculée par l’application Diabphone Calculateur© repose sur la valeur estimée de votre «&nbsp;sensibilité à l'insuline&nbsp;»</strong>, valeur qui reste théorique et approximative. Ainsi, <strong>la dose d’insuline de correction calculée par Diabphone Calculateur© doit être considérée comme indicative.</strong> De ce fait, et compte tenu de la multiplicité des autres paramètres pouvant influencer votre glycémie, <strong>Diabphone Calculateur© ne peut garantir le retour à la normale de votre glycémie après la correction d’une hyperglycémieou d'une glycémie basse.</strong></p>
+                
+                <p><strong>Les doses d’insuline de correction calculées par l’application Diabphone Calculateur© dépendent néanmoins des paramètres de réglage que vous aurez saisis et de la précision avec laquelle votre «&nbsp;sensibilité à l'insuline&nbsp;» a été estimée. Il est donc recommandé que ces réglages et l’estimation de votre «&nbsp;sensibilité à l'insuline&nbsp;» soient effectués sous la supervision de votre diabétologue ou votre équipe soignante.</strong> En cas de doute concernant le réglage de ces paramètres, il est recommandé de ne pas activer ou utiliser cette fonction.</p>
+                
+                <p><strong>La réalisation d’une «&nbsp;correction&nbsp;», et donc l’utilisation de la fonction «&nbsp;calculateur de correction&nbsp;» de Diabphone Calculateur©, n’est pas adaptée à toutes les situations d’hyperglycémie ou de glycémie basse</strong>&nbsp;: c’est le cas notamment si, par exemple, de l’insuline rapide a été administrée dans les heures qui précèdent ou si de l’activité physique est prévue dans les heures qui suivent, situations où la correction d'une hyperglycémie ou d'une glycémie basse risque d’entraîner une hypoglycémie (cette liste d’exemples n’est pas exhaustive et la correction d’une hyperglycémie ou d'une glycémie basse peut être inadaptée dans d’autres situations).</p>
+                
+                
+                <p>En conséquence, il est indispensable avant toute utilisation de l'application Diabphone Calculateur©&nbsp;:</p>
+                <ul>
+                    <li>que vous ayez été formé(e) à l’insulino-thérapie fonctionnelle, que vous ayez compris les principes, les limites et les risques de cette méthode d’adaptation.</li>
+                    <li><strong>que vous ayez été formé aux principes de la «&nbsp;correction&nbsp;» par votre diabétologue ou votre équipe soignante et que vous en connaissiez les conditions d’utilisation, de non utilisation et leurs limites.</strong></li>
+                    <li>que vous ayez acquis de solides connaissances concernant les pourcentages de glucides des aliments et une solide expérience concernant l’estimation du poids des aliments et le calcul des doses d’insuline.</li>
+                    <li>que vous ayez compris le fonctionnement, les limites et les risques de l'application Diabphone Calculateur©.</li>
+                    <li>que les réglages de l'application Diabphone Calculateur©, notamment les valeurs d'objectif de correction et de sensibilité à l'insuline, ainsi que le paramétrage de la formule de calcul et des ratios insuline/ glucides, soient effectués  sous la stricte supervision de votre diabétologue ou votre équipe soignante, lors de sa mise en route puis régulièrement par la suite.</li>
+                    <li>d’avoir l’accord de votre diabétologue ou votre équipe soignante concernant l’utilisation de l'application Diabphone Calculateur©.</li>
+                </ul>
+                
+                <p>Il est indispensable lors de l’utilisation de l'application Diabphone Calculateur© de vous assurer de l’exactitude des réglages de façon régulière, et de toutes les données que vous saisissez lors des repas.</p>
+                
+                <p>Ces Conditions d’Utilisation s’ajoutent aux conditions générales d’Apple auxquelles vous adhérez lorsque vous téléchargez l’application sur l’AppStore. En cas de conflit entre les deux textes, les présentes conditions prévalent.</p>
+                
+                <p>Je comprend les informations, avertissements et recommandations figurant ci-dessus et je reconnais vouloir utiliser l'application Diabphone Calculateur© en connaissance de cause. Je reconnais que Diabphone Calculateur© ne saurait en aucun cas être tenu pour responsable d'aucun dommage d'aucune sorte dû à une utilisation malencontreuse.</p>
+
+</body>
+
+{% endblock center-page %}
+

@@ -1,0 +1,41 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Respect de la vie privée</h1>
+                
+                <p>L’application Diabphone© vous permet de stocker, organiser et visualiser des informations ayant trait à votre diabète. Ces données sont particulièrement sensibles car elles concernent votre santé et votre vie privée. Il convient de les protéger et de veiller à ne pas les divulguer ou les diffuser sans raison.</p>
+                
+                <strong>Protection de la confidentialité des données</strong>
+                <p>L’application Diabphone© comporte un certain nombre de mesures destinées à protéger la confidentialité de vos données:</p>
+                <ul>
+                    <li>Possibilité de protéger l’accès aux données de Diabphone© par un code chiffré exigé à chaque ouverture de l’application (recommandé)</li>
+                    <li>Anonymisation des données stockées dans l’application Diabphone© et du contenu des fichiers d’impression (carnet et statistiques)</li>
+                    <li>Messages divers signalant un risque potentiel pour la confidentialité de vos données</li>
+                </ul>
+                
+                <p>Signalons que l’ensemble des données qui vous sont demandées dans la section « réglage », au démarrage de l’application ou de l’option «insulinothérapie fonctionnelle », sont nécessaires au bon fonctionnement de l’application Diabphone© et à son utilisation. Signalons également que dans ces versions de l’application (version standard et option « insulinothérapie fonctionnelle »), la société Diabphone ne collecte aucune donnée vous concernant et ne dispose d’aucun moyen lui permettant de vous identifier, directement ou indirectement. La société Diabphone s’engage expressément à ne jamais dévoiler à quiconque les données personnelles des utilisateurs qui peuvent être portées à sa connaissance.</p>
+                
+                <strong>Divulgation ou diffusion de vos données</strong>
+                <p>L’application Diabphone© vous permet de transmettre certaines données contenues dans votre application, à distance de votre appareil où elles sont normalement stockées. C’est le cas si vous décidez d’imprimer et/ou de transmettre par mail votre carnet de surveillance ou certaines statistiques. Ces fonctionnalités comportent des risques vis-à-vis de la confidentialité de vos données, en particulier si ces données parviennent à la connaissance d’une personne non désirée (impression papier qui traine, affichage de votre carnet à l’écran de votre ordinateur, erreur d’adresse lors de l’envoi d’un fichier par mail, etc…).</p>
+                
+                <p>Veillez à ne pas transmettre vos données sans raison. Assurez-vous de l’identité du destinataire à qui vous adressez vos données. Protégez l’accès à vos appareils électronique (iPhone, iPad, ordinateur) et à votre messagerie par un mot de passe.</p>
+                
+                <p>Pour plus de conseils concernant la sécurité de vos dispositifs mobiles, vous pouvez consulter le site: <a href="http://www.cnil.fr/dossiers/internet-telephonie/fiche-pratique/article/tablettes-smartphones-ou-ordinateurs-portables-pensez-a-la-securite-de-vos-donnees/">http://www.cnil.fr/dossiers/internet-telephonie/fiche-pratique/article/tablettes-smartphones-ou-ordinateurs-portables-pensez-a-la-securite-de-vos-donnees/</a></p>
+</body>
+
+{% endblock center-page %}
+
+

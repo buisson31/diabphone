@@ -1,0 +1,385 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Mode d'emploi de Diabphone Calculator{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+        <div data-role="page" id="reglages" data-add-back-btn=true data-position=fixed>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Réglages</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <h3>Acceptez les conditions</h3>
+                
+                <p>Au premier lancement, un message décrivant les conditions d'utilisation s'affiche, et il faut appuyer sur le bouton "J'accepte ces conditions" pour pouvoir continuer.
+                <div><center><img src="/static/img/disclaimer_fr.png" width="250px"/></center></div>
+                
+                <p><em>Note:</em> il faut faire défiler le texte jusqu'en bas pour
+                que le bouton devienne actif.
+                
+                <h3>Création d'un mot de passe</h3>
+                <p>Afin de mieux protéger vos données personnelles, un message vous propose ensuite de crééer un mot de passe à 4 chiffres qui sera demandé à chaque lancement de l'application.</p>
+                <div><center><img src="/static/img/create_password_fr.png" width="250px"/></center></div>
+                
+                <p>Si vous acceptez, un écran de création de mot de passe vous sera proposé.</p>
+                <div><center><img src="/static/img/change_password_fr.png" width="250px"/></center></div>
+                <p>Entrez simplement 4 chiffres et confirmez les. Si vous changez d'avis et ne voulez plus mettre de mot de passe, appuyez sur annuler ou laisser les champs vides.</p>
+                <p>Par ailleurs, vous pourrez à tout moment ajouter, supprimer ou changer un mot de passe à partir de l'onglet des réglages</p>
+                
+                <h3>Demande du mot de passe</h3>
+                <p>Si vous avez mis un mot de passe, il vous est demandé à chaque lancement de l'application</p>
+                <div><center><img src="/static/img/mot_de_passe_fr.png" width="250px"/></center></div>
+
+                                
+                <h4>Formule de calcul</h4>
+                <p>Choisissez votre formule de calcul habituelle dans la liste proposée&nbsp;:</p>
+                <div><center><img src="/static/img/formule_fr_new.png" width="250px"/></center></div>
+                <p>Le calcul effectivement réalisé par la formule choisie est rappelé en bas&nbsp;:</p>
+                <div><center><img src="/static/img/formule_detail_fr_new.png" width="250px"/></center></div>
+                
+                <h4>Ratios insuline/glucides - ratios repas et ratios collations</h4>
+                <p>Ajustez la valeur de vos ratios d’ITF pour chacun des 3 principaux repas ainsi que pour des collations éventuelles&nbsp;:</p>
+                <div><center><img src="/static/img/ratios_fr_new.png" width="250px"/></center></div>
+                <p>Lorsque vous tenterez d’accéder au carnet après avoir renseigné vos ratios, il apparaîtra un écran dont l’objectif est de vérifier que vous avez bien compris comment fonctionne le calcul d’une dose de bolus en fonction de la quantité de glucides absorbés pendant un repas, du ratio insuline/glucides correspondant à ce repas, et de la formule de calcul.</p>
+                <div><center><img src="/static/img/verif_itf.png" width="250px"/></center></div>
+                <p>Sur cet écran, vous devez fournir pour chacun des 3 repas une quantité de glucides et la dose d'insuline correspondante, telle que vous pensez l'obtenir avec la formule et les coefficients que vous avez fournis. Par sécurité et afin d'empêcher un paramétrage incorrect, Diabphone n'activera pas l'assistant de calcul ITF tant que ces résultats ne seront pas corrects.</p>
+                
+                
+                <h4>Sensibilité à l'insuline</h4>
+                <p>Indiquez de combien diminue votre glycémie avec une injection d'une unité d'insuline rapide</p>
+                <div><center><img src="/static/img/sensibilite_fr_new.png" width="250px"/></center></div>
+                
+                <h4>Objectif de correction</h4>
+                <p>Indiquez la valeur de glycémie que vous souhaitez atteindre lorsque vous faites un bolus pour corriger une hyperglycémie</p>
+                <div><center><img src="/static/img/objectif_fr_new.png" width="250px"/></center></div>
+                
+                <h4>Calcul de correction</h4>
+                <p>La proposition d’une dose additionnelle de correction survient au moment des repas, selon le calcul suivant&nbsp;:</p>
+                <ul>
+                    <li>Si la glycémie est inférieure à la limite d'hypoglycémie, ne propose rien car il faut d’abord réagir spécifiquement au problème d’hypoglycémie.</li>
+                    <li>Si la glycémie est comprise entre la limite d'hypoglycémie et la valeur basse de la norme de glycémie, propose une valeur négative, égale à l’écart entre la glycémie et cette valeur basse de la norme, divisé par la valeur de sensibilité à l’insuline. Par exemple si la glycémie est de 70mg/dl, la valeur basse de la norme est de 80 mg/dl et la sensibilité à l’insuline de 40mg/U, la valeur proposée sera égale à (70-80)/40 = -0,25U.</li>
+                    <li>Si la glycémie est entre la valeur basse de la norme de glycémie et l’objectif de glycémie, ne propose rien.</li>
+                    <li>Si la glycémie est supérieure à l’objectif de glycémie, propose une correction égale à l’écart entre la glycémie et l’objectif, divisé par la valeur de sensibilité à l’insuline. Par exemple si la glycémie est de 260mg/dl, l’objectif de 100mg/dl et la sensibilité à l’insuline de 40mg/U, la valeur proposée sera égale à (260-100)/40 = 4U.</li>
+                </ul>
+                
+                <p><strong>Attention:</strong> Si vous avez reçu un autre bolus de correction dans les 4-5 heures précédant la proposition de dose de correction, la valeur proposée par le calculateur risque d’être trop élevée, d’où un risque d’hypoglycémie.</p>
+                
+
+                <h4>Modifier les aliments</h4>
+                <p>Diabphone n'utilise pas une table alimentaire détaillée, mais classe plutôt les aliments en catégories et sous-catégories par pourcentage de glucides. Cela permet une saisie plus simple et facilite la mémorisation des pourcentages. Une liste d'aliments favoris peut néanmoins être créée pour simplifier la gestion des aliments les plus courants</p>
+                
+                <p>&rarr; Modifier une sous-catégorie<p>
+                <p>La liste des catégories de départ (féculents, fruits, etc.) n'est pas modifiable. Par contre, les sous-catégories le sont totalement. Sélectionnez d'abord la catégorie de départ&nbsp;:</p>
+                <div><center><img src="/static/img/modifier_aliments_fr_new.png" width="250px"/></center></div>
+                
+                <p>La liste des sous-catégories apparaît; celle qui est qualifiée de 'standard' est surlignée en vert et apparaît en tête et les autres apparaissent par ordre de pourcentage croissant&nbsp;:</p>
+                <div><center><img src="/static/img/sous_categories_fr_new.png" width="250px"/></center></div>
+                
+                <p>On peut ici créer, modifier ou supprimer une sous-catégorie. Si on souhaite par exemple créer une sous-catégorie de féculents à 30% de glucides, on clique sur 'créer' puis on choisit le pourcentage 30%&nbsp;:</p>
+                <div><center><img src="/static/img/sous_categorie_pourcentage_fr_new.png" width="250px"/></center></div>
+                
+                <p>On peut ensuite donner un nom à la sous-catégorie (elle a pour nom 'Féculents 30%' par défaut) et fournir des exemples d'aliments lui appartenant (par exemple: 'semoule')</p>
+                <div><center><img src="/static/img/sous_categorie_fr_new.png" width="250px"/></center></div>
+                <p>En mettant le bouton 'catégorie standard' à 'ON', on peut faire de cette sous-catégorie celle qui apparaît en tête de liste, surlignée en vert.</p>
+
+                <p>&rarr; Aliments favoris<p>
+                <p>En tapant sur 'Mes aliments', on accède à une liste (initialement vide) d'aliments favoris.</p>
+                <div><center><img src="/static/img/modifier_favoris_fr_new.png" width="250px"/></center></div>
+                
+                <p>Pour créer un aliment, cliquez sur 'créer'; une page de saisie apparaît&nbsp;:</p>
+                <div><center><img src="/static/img/abricot_fr_new.png" width="250px"/></center></div>
+                <p>Il faut entrer le nom de l'aliment, et ajuster ensuite les roues en fonction du contenu nutritionnel d'une portion de l'aliment, pour finalement avoir le poids d'une portion et la quantité de glucides qu'elle contient. Parfois on ne possède que le pourcentage (g de glucides pour 100g): dans ce cas la quantité en gr de glucides est calculée automatiquement.</p>
+
+                <p>&rarr; Convertir un aliment de la table Ciqual en aliment favori<p>
+                <p>En tapant sur 'Table CIQUAL 2012' à partir des réglages, l'appui sur un aliment de la liste propose de l'ajouter à la liste des aliments favoris:</p>
+                <div><center><img src="/static/img/ciqual_to_favori_fr.jpg" width="250px"/></center></div>
+
+                
+                <h4>Taille des portions</h4>
+                <p>On peut ici modifier le poids des portions par défaut pour chaque catégorie d'aliment&nbsp;:</p>
+                <div><center><img src="/static/img/taille_portions_fr_new.png" width="250px"/></center></div>
+                <p>Ici par exemple, la taille de la portion de féculents a été modifiée de 100g à 40g, de façon à permettre une saisie plus fine de la quantité</p>
+                
+                
+                <h4>Unité de glycémie</h4>
+                <p>La glycémie des lecteurs est en général donnée en mg/dl; changez cette unité seulement si votre lecteur fonctionne en mmol/l</p>
+                <div><center><img src="/static/img/reglages_unite_frag_fr_new.png" width="250px"/></center></div>
+                
+                
+                <h3>Sauvegarde et restauration</h3>
+
+                <h4>Sauvegarde des données</h4>
+                
+                <p>L'ensemble des données (aliments favoris, catégories d'aliments) et des réglages peuvent être sauvegardés afin de prévenir la perte ou le vol de l'appareil, ou pour transférer les données d'un appareil vers un autre. La sauvegarde prend la forme d'un email dont le contenu décrit les données sauvegardées.</p>
+                
+                <p>Pour créer la sauvegarde, allez dans les réglages puis appuyez sur 'Sauvegarder les données'</p>
+                <div><center><img src="/static/img/backup.jpg" width="250px"/></center></div>
+                
+                <p>Appuyer ensuite sur 'Créer une sauvegarde' : un formulaire d'email apparaît. Ne rien modifier dans le corps du message; indiquer simplement l'adresse mail du destinataire, et envoyer</p>
+                <div><center><img src="/static/img/backup_mail.jpg" width="250px"/></center></div>
+                
+                
+                <h4>Restauration des données</h4>
+                
+                <p>ATTENTION: toutes les données courantes vont être effacées et remplacées par les données de la sauvegarde</p>
+                
+                <p>Aller d'abord dans l'application 'Mail' et ouvrir le mail de sauvegarde. Sélectionner tout le texte du mail:</p>
+                <div><center><img src="/static/img/restore_select_mail.jpg" width="250px"/></center></div>
+                
+                <p>Copier le texte sélectionné:</p>
+                <div><center><img src="/static/img/restore_copy_mail.jpg" width="250px"/></center></div>
+                
+                <p>Lancer ensuite l'application Diabphone, aller dans les réglages puis appuyer sur 'Restaurer les données'. Vérifiez que la zone de texte contient les données copiées dans l'email:</p>
+                <div><center><img src="/static/img/restore_paste_mail.jpg" width="250px"/></center></div>
+                
+                <p>Appuyer ensuite sur 'Restaurer les données': un message de succès doit s'afficher</p>
+
+                
+                <h4>Changer le mot de passe</h4>
+                <p>Vous pouvez ajouter, supprimer ou changer un mot de passe en accédant à l'option tout en bas de l'onglet de réglages</p>
+                <p>Un écran de saisie apparaît:</p>
+                <div><center><img src="/static/img/change_password_full_fr.png" width="250px"/></center></div>
+                <p>Si vous souhaitez <strong>supprimer</strong> un mot de passe existant, laissez vides les 2 champs "nouveau mot de passe" et "confirmez mot de passe" et appuyez sur "ok": le mot de passe courant sera supprimé</p>
+
+
+            </div>
+            
+        </div>
+
+        
+        <div data-role="page" id="saisie-itf" data-add-back-btn=true>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Insulino-thérapie fonctionnelle</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <p><h4>Rappel:</h4> l'insulino-thérapie fonctionnelle est une méthode d'ajustement des doses d'insuline qui est réservée aux diabétiques de type 1, et qui doit être réalisée sous la stricte supervision d'un médecin spécialiste, et notamment le paramétrage de la formule et des coefficients. Diabphone décline toute responsabilité en cas de problème d'hypo- ou hyper-glycémie, voir le <a href='#disclaimer-general'>contrat d’utilisation de l’application.</a>.</p>
+                
+                <p>La methode ITF consiste à déterminer la quantité de glucides contenue dans un repas, afin de calculer de façon précise la dose d'insuline rapide à injecter. Dès le lancement de l'application, un écran de saisie des aliments du repas courant s'affiche:</p>
+                <div><center><img src="/static/img/saisie_repas_Cc_fr.png" width="250px"/></center></div>
+                
+                <h4>Ajout des aliments</h4>
+                <p>Pour ajouter un aliment, appuyez sur 'Ajouter aliment': un écran apparaît, qui vous permet de choisir une catégorie d'aliment ou un aliment favori , ou un aliment de la base de données Ciqual:</p>
+                <div><center><img src="/static/img/categories_fr.jpg" width="250px"/></center></div>
+                
+                <p>Ces catégories et la liste des aliments favoris sont entièrement modifiables; voir la section <a href='#reglages'>'Réglages'</a>.</p>
+                
+                <p>Si on choisit une catégorie, on doit ensuite choisir la sous-catégorie qui correspond au pourcentage de glucides de l'aliment&nbsp;:</p>
+                <div><center><img src="/static/img/feculents_fr.jpg" width="250px"/></center></div>
+                
+                <p>Pour choisir ses aliments favoris, il suffit de taper dessus dans la liste&nbsp;:</p>
+                <div><center><img src="/static/img/favoris_fr.jpg" width="250px"/></center></div>
+                
+                <p>Après avoir choisi, on doit préciser le poids de l'aliment; le poids des portions (réglable) fournit des points de repère&nbsp;:</p>
+                <div><center><img src="/static/img/poids_feculent_std_fr.jpg" width="250px"/></center></div>
+                
+                <p>Le choix d'un aliment de la table Ciqual conduit à un écran de choix par nom ou par catégorie:</p>
+                <div><center><img src="/static/img/ciqual_fr.jpg" width="250px"/></center></div>
+                <p>La barre de recherche peut être utilisée pour trouver un aliment à partir d'une partie de son nom, par exemple 'pain':'</p>
+                <div><center><img src="/static/img/ciqual_nom_fr.jpg" width="250px"/></center></div>
+                
+                <p>Tous les aliments contenant 'pain' dans leur nom apparaissent dans une liste:</p>
+                <div><center><img src="/static/img/ciqual_pain_fr.jpg" width="250px"/></center></div>
+                
+                <p>On continue ainsi de suite, pour constituer l'ensemble du repas; par exemple&nbsp;:</p>
+                <div><center><img src="/static/img/repas_complet_Cc_fr.jpg" width="250px"/></center></div>
+                
+                <p>Le total des glucides apparaît dans la barre du haut (ici: 81 gr). Lorsque le repas est complet, il suffit de taper sur 'bolus d'insuline' pour ouvrir la fenêtre de calcul de la dose d'insuline&nbsp;:</p>
+                <div><center><img src="/static/img/insuline_glucides_repas_Cc_fr.png" width="250px"/></center></div>
+                
+                <p>La formule de calcul choisie et le coefficient (voir section <a href='#reglages'>'Réglages'</a> permettent le calcul du bolus d'insuline. Ici, pour une formule utilisant un coefficient de 0,6U pour 10g de glucides, cela conduit à une dose de 0,6*81/10 = 4,9U</p>
+                
+                <p>En entrant la valeur de la glycémie, une correction d'insuline peut être proposée, qu'il faut ajouter à cette valeur. Sur l'exemple, avec une glycémie de 150mg/dl, la correction proposée est de 2U et la dose d'insuline à injecter est donc de 4,9U + 2U soit environ 7U</p>
+                <div><center><img src="/static/img/insuline_glucides_repas_corr_Cc_fr.png" width="250px"/></center></div>
+
+                <h4>Modification d'un repas</h4>
+                <p>En tapant sur un aliment du repas, une liste d'actions possibles apparaît&nbsp;:</p>
+                <div><center><img src="/static/img/modifier_aliment_fr.jpg" width="250px"/></center></div>
+                <p>On peut modifier le poids, ou la classe de pourcentage de glucides, ou supprimer totalement l'aliment. À noter qu'il est aussi possible de supprimer tous les aliments en appuyant sur l'icone en forme de poubelle dans l'écran de saisie du repas</p>
+
+                <h4>Sauvegarde des repas</h4>
+                <p>Pour faciliter la saisie des repas les plus courants, il est possible de sauvegarder les repas pour les recharger ultérieurement. Il suffit de taper l'icone en forme de disquette au bas de l'écran de saisie des repas&nbsp;:</p>
+                <div><center><img src="/static/img/disquette_fr.jpg" width="250px"/></center></div>
+                
+                <p>En appuyant sur 'Enregistrer le repas courant', il est demandé dans quelle catégorie de repas celui-ci doit être stocké&nbsp;:</p>
+                <div><center><img src="/static/img/save_repas_type_fr.jpg" width="250px"/></center></div>
+                
+                <p>En appuyant sur 'Parcourir les repas sauvegardés', le repas courant n'est pas enregistré, mais on a accès à la base de données des repas&nbsp;:</p>
+                <div><center><img src="/static/img/repas_bd_fr.jpg" width="250px"/></center></div>
+                
+                <p>À partir de cet écran, on peut parcourir les repas sauvegardés (flèches), en supprimer (icone 'poubelle') ou charger un repas sélectionné dans l'éran de saisie des repas (bouton 'charger')</p>
+                
+            </div>
+        </div>
+                
+        
+        <div data-role="page" id="transfert" data-add-back-btn=true>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Transfert</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <h3>Transfert des données</h3>
+
+                <p>En cliquant en bas sur l'onglet 'Divers' vous accédez aux fonctions de transfert et de synchronisation des données&nbsp;:</p>
+                <div><center><img src="/static/img/onglet_transfert_fr_new.png" width="250px"/></center></div>
+                
+                <!-- RELEASE_SERVER
+                 <p>L'écran suivant apparaît&nbsp;:</p>
+                <div><center><img src="/static/img/transfert_fr_new.png" width="250px"/></center></div>
+                <ul>
+                    <li><p>Le transfert iPad permet de synchroniser les donnés d'un iPhone ou d'un iPod Touch avec un iPad</p></li>
+                    <li><p>le transfert vers le serveur sécurisé se synchronise avec un serveur distant sur internet</p></li>
+                </ul>
+                
+                <p>Ces deux types de synchronisation ont le même but: pour un même dossier, toute nouvelle information présente sur un des deux appareils est transférée vers l'autre.</p>
+                
+                <p>La synchronisation avec un iPad est possible avec la version de base du carnet. La synchronisation avec un serveur sécurisé est une option payante (voir <a href='#option-serveur'>'Option serveur sécurisé'</a>).
+                                
+                <p>Un iPad peut héberger plusieurs dossiers; un diabétologue ou médecin traitant peut ainsi avoir les carnets de plusieurs de ses patients</p>
+                -->
+                
+                <h4>Transfert vers un iPad</h4>
+                
+                <p>Cette fonction de transfert permet d'utiliser indifféremment l'iPhone ou l'iPad: après synchronisation, toute nouvelle information sur l'un est transférée vers l'autre</p>
+                
+                <p>Il faut d'abord que Diabphone soit également installé sur l'iPad, ce qui est possible sans surcoût dès lors qu'on l'a acheté sur iPhone ou iPod Touch. Utilisez iTunes ou installez l'application à partir de l'AppStore</p>
+                
+                <p>Pour que la synchronisation soit possible, il faut activer le Bluetooth sur les 2 appareils. Voir les réglages de l'iPhone et de l'iPad, section 'Général', puis 'Bluetooth'</p>
+                
+                <p>Pour lancer la synchronisation, il suffit de lancer Diabphone sur l’iPad et sur l’iPhone, puis, depuis l’iPhone, d’appuyer sur le bouton 'Transfert iPad' dans l’onglet 'Divers'&nbsp;:</p>
+                <div><center><img src="/static/img/transfert_ipad_fr_new.png" width="250px"/></center></div>
+                
+                <p>Appuyez ensuite sur «&nbsp;Démarrer&nbsp;», une barre de progression apparaîtra et le bouton indiquera «&nbsp;terminé&nbsp;» à la fin du transfert.</p>
+                <div><center><img src="/static/img/transfert_progression_fr_new.png" width="250px"/></center></div>
+
+                <p>La mise en relation initiale des deux appareils est lente, et peut prendre jusqu'à 30s. Les deux appareils ne doivent pas être éloignés de plus de quelques mètres.</p>
+                
+                <p>Lors du premier transfert, les dossiers sur l'iPhone et sur l'iPad sont différents et un choix est proposé:</p>
+                <div><center><img src="/static/img//static/img/bluetooth_direction_fr.jpg" width="250px"/></center></div>
+                
+                <ul>
+                    <li>En choisissant 'iPhone &rarr; iPad', les réglages et les données contenu dans l'iPhone remplaceront ceux de l'iPad et toutes les données de l'iPad seront perdues. Un message de confirmation explicitant les conséquences de ce choix est affiché avant que le transfert ne soit effectué</li>
+                    <li>En choisissant 'iPad &rarr; iPhone', les réglages et les données contenu dans l'iPad remplaceront ceux de l'iPhone et toutes les données de l'iPhone seront perdues. Un message de confirmation est affiché avant que le transfert ne soit effectué</li>
+                    <li>En choisissant 'fusion iPad &amp; iPhone', les dossiers de l'iPhone et de l'iPad seront fusionnés pour ne former qu'un. Tout réglage ou toute donnée présent sur l'un sera transféré sur l'autre s'il est nouveau ou s'il a été modifié plus récemment. Le <a href='#reglages'>code personnel</a> de ce dossier commun sera celui de l'iPhone.</li>
+                </ul>
+                                
+                <!-- RELEASE_SERVER
+                <h4>Transfert vers un serveur sécurisé</h4>
+                <p>Si vous avez souscrit au module optionnel <a href='#option-serveur'>Option serveur sécurisé</a>, le transfert des données est automatique et se fait au fur et à mesure des saisies. L'appui sur le bouton 'Vérification synchro. serveur' permet de vérifier que l'iPhone (ou l'iPad) est bien synchronisé avec le serveur</p>
+                <div><center><img src="/static/img//static/img/deja_synchro_fr.jpg" width="250px"/></center></div>
+                
+                <h4>Générer un code d'accès</h4>
+                <p>Pour les utilisateurs du module optionnel ‘serveur sécurisé’, le médecin peut avoir un accès web sécurisé au carnet de son patient si ce dernier le souhaite, ainsi que la possibilité d’importer le carnet du patient sur son iPhone ou iPad. Lorsque vous souscrivez à l’option, un code personnel est donné à l’utilisateur. C’est son identifiant, il est totalement anonyme.</p>
+                <p>Le code d’accès est le mot de passe correspondant au code personnel. Il est temporaire, et l’utilisateur doit le générer lui-même en appuyant sur le bouton «&nbsp;Générer un code d’accès&nbsp;» dans la section «&nbsp;Transfert&nbsp;» de l’onglet «&nbsp;Divers&nbsp;».</p>
+                <div><center><img src="/static/img//static/img/code_acces_fr_new.png" width="250px"/></center></div>
+                <p>Il faut ensuite donner à ce code d’accès une durée de validité (de 1 jour à 1 semaine), spécifier s’il donne l’autorisation de modifier le carnet du patient si jamais le médecin l’importe sur son iPhone/iPad (il n’est pas possible de modifier le carnet à travers l’accès web), puis appuyer sur le bouton «&nbsp;Générer&nbsp;». Vous pouvez ensuite communiquer le code à votre médecin.</p>
+                 -->
+            </div>
+        </div>
+        
+                
+        <div data-role="page" id="backup-restore" data-add-back-btn=true>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Sauvegarde et restauration</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <h3>Sauvegarde et restauration</h3>
+                
+                <h4>Sauvegarde des données</h4>
+                
+                <p>L'ensemble des données (aliments favoris, catégories d'aliments) et des réglages peuvent être sauvegardés afin de prévenir la perte ou le vol de l'appareil, ou pour transférer les données d'un appareil vers un autre. La sauvegarde prend la forme d'un email dont le contenu décrit les données sauvegardées.</p>
+                
+                <p>Pour créer la sauvegarde, allez dans les réglages puis appuyez sur 'Sauvegarder les données'</p>
+                <div><center><img src="/static/img/backup.jpg" width="250px"/></center></div>
+                
+                <p>Appuyer ensuite sur 'Créer une sauvegarde' : un formulaire d'email apparaît. Ne rien modifier dans le corps du message; indiquer simplement l'adresse mail du destinataire, et envoyer</p>
+                <div><center><img src="/static/img/backup_mail.jpg" width="250px"/></center></div>
+                
+                
+                <h4>Restauration des données</h4>
+                
+                <p>ATTENTION: toutes les données courantes vont être effacées et remplacées par les données de la sauvegarde</p>
+                
+                <p>Aller d'abord dans l'application 'Mail' et ouvrir le mail de sauvegarde. Sélectionner tout le texte du mail:</p>
+                <div><center><img src="/static/img/restore_select_mail.jpg" width="250px"/></center></div>
+                
+                <p>Copier le texte sélectionné:</p>
+                <div><center><img src="/static/img/restore_copy_mail.jpg" width="250px"/></center></div>
+                
+                <p>Lancer ensuite l'application Diabphone Calculateur, aller dans les réglages puis appuyer sur 'Restaurer les données'. Vérifiez que la zone de texte contient les données copiées dans l'email:</p>
+                <div><center><img src="/static/img/restore_paste_mail.jpg" width="250px"/></center></div>
+                
+                <p>Appuyer ensuite sur 'Restaurer les données': un message de succès doit s'afficher</p>
+
+            </div>
+        </div>
+        
+
+        <div data-role="page" id="divers" data-add-back-btn=true>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Divers</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <h3>Divers</h3>
+                
+                <h3>Laisser un message</h3>
+                <p>Si vous souhaitez nous laisser un message quelconque, appuyez dans les réglages à la rubrique 'Divers' puis 'Laisser un message'; vous n'avez plus qu'à écrire le texte et appuyer sur 'Envoyer'</p>
+
+                <h3>Restauration des options</h3>
+                <p>Si vous avez acheté une des options payantes, vous pouvez la réinstaller sur n'importe quel appareil (iPhone, iPad ou iPod Touch) vous appartenant et qui utilise les mêmes identifiants AppStore. Cela répond aux situations suivantes:</p>
+                <ul>
+                    <li>remplacement d'iPhone, iPad ou iPod Touch</li>
+                    <li>achat d'un iPhone, iPad ou iPod Touch supplémentaire</li>
+                    <li>perte ou vol d'un appareil</li>
+                </ul>
+                <p>La procédure est simple: allez dans les réglages, puis 'Restauration des options' et entrez vos identifiants AppStore. À la fin de la procédure, toutes les options auquelles vous avez souscrit seront restaurées</li>
+            </div>
+        </div>
+        
+        
+        <div data-role="page" id="option-logbook" data-add-back-btn=true>
+            
+            <div data-role="header" data-position="fixed">
+                <h1>Option Carnet de surveillance</h1>
+            </div><!-- /header -->
+            
+            <div data-role="content">
+                
+                <h3>Option Carnet de surveillance</h3>
+                
+                <p>Il s'agit d'une option payante, qui se souscrit sous forme d'un achat supplémentaire dans l'AppStore depuis l'application. Cette option peut être essayée gratuitement durant 15 jours. Avant toute utilisation, lisez attentivement les <a href='#disclaimer-option-logbook'>'Conditions et avertissements'</a><p>
+                
+                <h3>Essai gratuit</h3>
+                <p>Dans les réglages, à la section 'Modules optionnels', tapez simplement sur l'item 'Carnet'. Après acceptation des conditions, l'option est utilisable.</p>
+                
+                <h3>Utilisation</h3>
+                <p>Lorsque le carnet est actif, un onglet 'réglages' en bas de la page permet d'accéder à toute la documenation.</p>
+                
+            </div>
+        </div>
+
+{% endblock center-page %}
+
+

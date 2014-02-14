@@ -1,0 +1,22 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Contact{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+                <p>DIABPHONE, SARL</p>
+                <p>78 allées Jean-Jaurès, bat. F, Le Pré Catelan, 31000 Toulouse</p>
+                <p>Gérant et responsable informatique : Ivan Buisson</p>
+                <p>Pour toute demande de renseignements, suggestion, ou problème technique : <strong>contact@diabphone.com</strong></p>
+
+{% endblock center-page %}
+
+

@@ -1,0 +1,27 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h3><a href="terms_website">Conditions d'utilisation du site</a></h3>
+<h3><a href="terms_logbook">Conditions générales d’utilisation de l’application Diabphone</a></h3>
+<h3><a href="terms_correction">Calcul de correction: informations, avertissements, et recommandations</a></h3>
+<h3><a href="terms_itf">Conditions d’utilisation du module optionnel « Insulino-Thérapie Fonctionnelle »</a></h3>
+<h3><a href="privacy">Respect de la vie privée</a></h3>
+
+</body>
+
+{% endblock center-page %}
+
+

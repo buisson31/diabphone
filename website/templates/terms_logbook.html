@@ -1,0 +1,44 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+
+                <h3><center>Contrat de licence Utilisateur final</center></h3>
+                
+                <p>Les présentes Conditions d'Utilisation sont un accord juridique entre la société Diabphone et vous, et traite de l’utilisation que vous ferez du logiciel Diabphone Carnet© (« Diabphone Carnet© » ou « l’application »).</p>
+                <p>L’application Diabphone Carnet© est un carnet d’auto-surveillance glycémique dans lequel vous pouvez stocker, organiser et  visualiser des informations et des commentaires pour faciliter le suivi et le traitement de votre diabète. Diabphone Carnet© vous permet de  transmettre si vous le souhaitez ces données à distance à votre médecin ou votre équipe soignante. Si vous êtes diabétique de type 1, Diabphone Carnet© peut vous aider à effectuer les opérations de calcul des doses d’insuline de correction que vous pouvez avoir décidé de faire en cas d’hyperglycémie ou de retirer en cas de glycémie basse.</p>
+                <p><strong>Diabphone Carnet© ne s’engage pas à rendre un conseil ou une recommandation médicale. Vous reconnaissez que l’application Diabphone Carnet© et toute information qu’elle peut contenir ou transmettre ne peuvent jamais et n’ont pas pour but de remplacer ni l’avis d’un professionnel de santé, ni votre bon sens ou votre jugement. Vous vous engagez à ne jamais retarder la consultation d’un professionnel de santé ni à ignorer son avis médical du fait de l’utilisation de l’application Diabphone Carnet© ou de toute information qui vous serait parvenue directement ou indirectement à travers l’application Diabphone Carnet©. Vous reconnaissez que vous ne devez à aucun moment laisser l’application Diabphone Carnet© influencer vos décisions d’ordre médical, et acceptez l’entière responsabilité de ces dernières.</strong></p>
+                <p>Vous vous engagez expressément à lire attentivement, entièrement, et régulièrement le mode d’emploi de l’application Diabphone Carnet© de manière à maîtriser complètement l’utilisation de celle-ci, et ce, avant de vous en servir. Ce mode d’emploi est disponible dans la rubrique « Info » de l’application ou sur le site web www.diabphone.com, où vous trouverez les informations nécessaires à l’utilisation de l’application Diabphone Carnet© ainsi que des précautions d’emploi qu’il est essentiel de connaître.</p>
+                <p><strong>L’utilisation de Diabphone Carnet© ne peut en aucun cas se substituer à vous dispenser d’une éducation  à la gestion du diabète et de son traitement. Au contraire, il vous est vivement recommandé d'avoir bénéficié d'une éducation à la gestion du diabète pour utiliser Diabphone Carnet©.</strong> Lors de la première exécution, vous devez entrer des paramètres propres à votre diabète dans la section « Réglages », et vous vous engagez à le faire sous la supervision de votre diabétologue ou médecin traitant.</p>
+                <p>Vous acceptez le fait que l’application Diabphone Carnet© ne peut pas prendre en compte toutes les variables qui déterminent le niveau de glycémie, et par conséquent l'obtention d'une glycémie normale ne peut être garanti. La société Diabphone, par conséquent, n’assume aucune responsabilité, d’aucune sorte, pour aucun type de dommages qui pourraient survenir lors de l'utilisation de l’application Diabphone Carnet©, incluant des épisodes d’hypoglycémie ou d’hyperglycémies, aiguës ou chroniques, ou leurs conséquences à court, moyen ou long terme.</p>
+                <p>La retranscription exacte de vos résultats conditionne la qualité de l’analyse que vous pourrez faire de ceux-ci et des décisions que vous pourrez prendre à l’égard de votre traitement. La société Diabphone n’a aucun contrôle ni sur l’utilisation que vous ou quiconque ferez de l’application Diabphone Carnet©, ni sur l’interprétation des informations que vous recevrez par l’intermédiaire de l’application Diabphone Carnet©. Vous êtes seul responsable de l’utilisation que vous ferez de l’application Diabphone Carnet© et il vous incombe exclusivement de vérifier la précision et la pertinence des informations contenues ou transmises par l’application Diabphone Carnet© avec l’aide de votre médecin. La société Diabphone ne saurait en aucun cas être tenu pour responsable de décisions inadéquates du fait d’erreurs de retranscription ou de réglages de votre part, notamment en ce qui concerne vos glycémies et de vos doses d’insuline.</p>
+                <p><strong>L’application est fournie en l’état et sans aucune garantie d’aucune sorte. La société Diabphone ne saurait en aucun cas être tenu pour responsable d’aucun dommage d’aucune sorte dû à l’utilisation de l’application Diabphone Carnet©, et vous vous engagez à ne vous prévaloir d’aucun préjudice dans un tel cas de figure.</strong></p>
+                <!-- RELEASE_SERVER <p>L’utilisation de certaines fonctions de l’application, comme l’envoi des données de votre carnet par e-mail, ou leur transfert vers ou depuis un serveur sécurisé dans le cadre du module optionnel « Serveur sécurisé », requiert un accès à internet par wifi ou 3G depuis votre appareil. De ce fait, l’utilisation de ces fonctions est impossible si vous vous trouvez dans une situation ou une zone géographique ne vous offrant pas d’accès à Internet (absence de réseau Wi-Fi ou 3G accessible), ou si les caractéristiques de votre appareil ne vous permettent pas d’accéder à Internet. Diabphone Carnet décline toute responsabilité en cas de frais supplémentaires de connexion Internet découlant de l’utilisation de l’application Diabphone Carnet.</p> -->
+                <p>L’utilisation de la fonction d'envoi des données de votre carnet par e-mail, requiert un accès à internet par wifi ou 3G depuis votre appareil. De ce fait, l’utilisation de cette fonction est impossible si vous vous trouvez dans une situation ou une zone géographique ne vous offrant pas d’accès à Internet (absence de réseau Wi-Fi ou 3G accessible), ou si les caractéristiques de votre appareil ne vous permettent pas d’accéder à Internet. La société Diabphone décline toute responsabilité en cas de frais supplémentaires de connexion Internet découlant de l’utilisation de l’application Diabphone Carnet©.</p>
+                <p>L’utilisation de la fonction « Transfert iPad », permettant la synchronisation des données d’un carnet sur iPhone ou iPod Touch et d’un carnet sur iPad, nécessite que les deux appareils disposent de la technologie Bluetooth en état de marche. La fonction « Transfert iPad » sera donc indisponible si les deux appareils sur lesquels vous voulez procéder à la synchronisation des données ne remplissent pas ces conditions.</p>
+                <p>Le site web www.diabphone.com a un rôle dans l’utilisation de l’application Diabphone Carnet©. Il contient un mode d’emploi que vous pouvez consulter en dehors de l’application Diabphone Carnet©. <!-- RELEASE_SERVER De plus, dans le cadre du module optionnel « Serveur sécurisé », l’accès aux données de votre carnet de surveillance peut se faire via le site web www.diabphone.com. --> Vous acceptez donc expressément et sans réserve les conditions d’utilisation du site web www.diabphone.com, disponibles sur ce même site.</p>
+                <p>La société Diabphone s’engage expressément à ne jamais dévoiler à qui que ce soit les données personnelles des utilisateurs qui peuvent être portées à sa connaissance.</p>
+                <p>Si vous souhaitez souscrire à un module optionnel, vous devez accepter expressément et sans réserve les conditions d’utilisation du module en question. Celles-ci s’afficheront avant son chargement, si vous disposez de l'application Diabphone Carnet©. Dans le cas contraire, consultez les avant sur le site web www.diabphone.com</p>
+                <p>Si vous souscrivez au module optionnel 'insulino-thérapie fonctionnelle', il est inutile d'acheter également l'application 'Diabphone Calculateur' qui possède les mêmes fonctionnalités</p>
+                <p>Il est absolument interdit d’extraire ou de modifier le code du programme d’une quelconque manière.</p>
+                <p>Les présentes Conditions d'Utilisation sont régies par la loi française. Tout litige relatif à l’utilisation de Diabphone Carnet© sera de la compétence des juridictions de Toulouse.</p>
+                <p>Ces Conditions d’Utilisation s’ajoutent aux conditions générales d’Apple auxquelles vous adhérez lorsque vous téléchargez l’application sur l’AppStore. En cas de conflit entre les deux textes, les présentes conditions prévalent.</p>
+
+
+</body>
+
+{% endblock center-page %}
+
+

@@ -1,0 +1,84 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Module « Insulinothérapie fonctionnelle »: Informations, avertissements et recommandations (v1.0)</center></h1>
+                
+                <p><strong>Définition</strong></p>
+                <p>L’insulino-thérapie fonctionnelle (ITF) est une méthode d’ajustement des doses d’insuline, réservée aux diabétiques de type 1, qui consiste à ajuster les doses d’insuline des repas en fonction de leur contenu en glucides.</p>
+                
+                <p><strong>Description</strong></p>
+                <p>Le module ITF de l’application Diabphone© vous propose une aide au compte des glucides d’un repas et au calcul de la dose d’insuline correspondante. Il ne doit être téléchargé et ne peut être mis en route que si vous êtes diabétique de type 1. Ce module se compose principalement d’une <em>base alimentaire simplifiée</em>, d’un « <em>calculateur de glucides</em> » et d’un « <em>calculateur d’insuline</em> ».</p>
+                
+                <p>La <em>base alimentaire simplifiée</em> et le <em>calculateur de glucides</em> de l’application Diabphone© ont pour but de vous aider en effectuant, à votre place, les calculs nécessaires pour compter les glucides de vos repas. Pour cela, vous devrez sélectionner l’ensemble des aliments de votre repas qui contiennent des glucides à partir de la <em>base alimentaire simplifiée</em>. Dans celle-ci, chaque aliment doit être saisi en fonction de sa catégorie, c’est-à-dire de son appartenance à une famille d’aliments (féculents, légumes, etc.), puis d'une sous-catégorie, caractérisée par son contenu moyen en glucides exprimé en pourcentage (exemples&nbsp;: féculents à 20%, légumes à 5%, etc.). Vous devrez ensuite préciser le poids de chaque aliment. À partir des données que vous aurez saisies, l’application Diabphone© calculera la quantité de glucides apportée par chaque aliment puis par l’ensemble du repas, selon la formule suivante&nbsp;: <em>(poids de l’aliment n°1 x % glucides) + (poids de l’aliment n°2 x % glucides) + … etc.</em></p>
+                
+                <p>Le <em>calculateur d’insuline</em> de l’application Diabphone© a pour but de vous aider en effectuant, à votre place, le calcul nécessaire pour déterminer la dose d’insuline correspondant à votre repas. La dose d’insuline est déterminée en fonction des réglages que vous aurez faits au préalable et de la quantité de glucides du repas que vous aurez saisi, selon le calcul suivant&nbsp;: <em>(contenu en glucides du repas) x (ratio insuline/glucides du repas)</em></p>
+                
+                <p><strong>Avertissements et recommandations</strong></p>
+                
+                <p><em>• Mode de sélection des aliments&nbsp;:</em><p>
+                <p>La sélection des aliments d’un repas à partir de la base alimentaire de Diabphone© ne se fait pas en fonction du nom des aliments mais en fonction de leur type et de leur pourcentage de glucides. Il est donc nécessaire, pour tous les aliments que vous consommez habituellement et qui composent l’essentiel de vos repas, que vous connaissiez à quelles familles ils appartiennent ainsi que leur contenu en glucides pour utiliser le module ITF.</p>
+                
+                <p><strong>Il est indispensable que vous ayez été formé(e) aux aspects diététiques de l’ITF et que vous ayez acquis de solides connaissances diététiques concernant en particulier les pourcentages de glucides des aliments, avant toute utilisation du module ITF.</strong></p>
+                
+                <p><em>•	Approximations de la <em>base alimentaire simplifiée</em> et conséquences sur le calcul de la dose d’insuline des repas&nbsp;:</em></p>
+                <p>Les noms de certains aliments usuels figurent à titre d’exemple dans la <em>base alimentaire simplifiée</em>, afin d’illustrer à quoi correspond telle ou telle catégorie d’aliment. Ainsi, le riz ou les pommes de terre figurent dans la sous-catégorie des féculents contenant 20% de glucides, les tomates dans celle de légumes contenant 5% de glucides. Dans la <em>base alimentaire simplifiée</em>, le nombre de sous-catégories a été volontairement limité pour faciliter la saisie des aliments lors des repas. Les aliments qui figurent dans la base alimentaire ont été rattachés à la sous-catégorie dont le pourcentage de glucides est le plus proche de celui habituellement décrit pour cet aliment. Le rattachement d’un aliment à une sous-catégorie ne signifie donc pas que son pourcentage de glucides est précisément celui de la sous-catégorie. De plus, le contenu en glucides d’un aliment peut varier en fonction de la variété des produits, de leur composition, de leur mode de fabrication ou de cuisson. <strong>Par conséquent, la présence d’un aliment au sein d’une sous-catégorie reste indicative et le pourcentage de glucides des aliments figurant dans la base n’est qu’une approximation.</strong></p>
+                
+                <p><strong>Cette approximation influence le compte des glucides d’un repas et le calcul de la dose d’insuline réalisés par l’application Diabphone©, qui doivent donc être considérés comme indicatifs. De ce fait, et compte tenu de la multiplicité des autres paramètres pouvant influencer votre glycémie, Diabphone© ne peut garantir le retour à la normale de votre glycémie après un repas.</strong></p>
+                
+                <p><strong>Ainsi, avant toute utilisation du module ITF, assurez-vous que les pourcentages de glucides des aliments figurant dans la base alimentaire correspondent à ceux que vous connaissez et utilisez habituellement. Si vous constatez des différences, parlez-en à votre diabétologue ou à votre équipe soignante pour ajuster, sous leur supervision, la base alimentaire à vos habitudes et vos besoins.</strong></p>
+                
+                <p>•	Erreurs et/ou imprécisions dans la saisie des données et conséquences sur le calcul de la dose d’insuline des repas&nbsp;:</p>
+                <p>Le compte des glucides d’un repas et le calcul de la dose d’insuline correspondante dépendent de nombreux paramètres que vous devez saisir avant ou lors du repas. <strong>Des erreurs et imprécisions dans la saisie de ces données peuvent entraîner, directement ou indirectement, des inexactitudes plus ou moins importantes dans le compte des glucides et dans le calcul de la dose d’insuline des repas</strong> réalisés par l’application Diabphone©, et être à l’origine d’hypoglycémies ou d’hyperglycémies, aiguës, répétées ou chroniques. <strong>En dépit d’un soin particulier apporté lors de conception du module ITF en termes de sécurité, l’application Diabphone© ne peut détecter les erreurs et/ou les imprécisions lors de la saisie des données.</strong></p>
+                <!--
+                <p><Vous gardez toujours la possibilité d’administrer, tout ou partie, ou de ne pas administrer la dose d’insuline d’un repas calculée par le module ITF de l’application Diabphone©. L’administration d’insuline relève de votre propre décision: utilisez vos connaissances, votre expérience et votre jugement pour prendre cette décision.</p>
+                -->
+                <p><strong>La société Diabphone ne saurait en aucun cas être tenu pour responsable de décisions inadéquates, ou de dommages du fait d’erreurs ou d’imprécisions dans les réglages du module ITF ou la saisie des données de votre part.</strong></p>
+                
+                <p>Les principales erreurs et imprécisions figurent ci-dessous (cette liste n’est pas exhaustive):</p>
+                
+                <em>•	Erreurs et imprécisions influençant le compte des glucides et, indirectement, le calcul de la dose d’insuline d’un repas&nbsp;:</em>
+                <ul>
+                    <li>Erreurs de sélection des aliments d’un repas: oubli d’un ou plusieurs aliments glucidiques entrant dans la composition de votre repas, rajout d’un ou plusieurs aliments glucidiques non consommés, sélection d’une catégorie ne correspondant pas au contenu en glucides de l’aliment consommé.</li>
+                    <li>Saisie inexacte du poids des aliments: erreur de saisie du poids de l’aliment, estimation imprécise du poids de l’aliment.</li>
+                </ul>
+                
+                <em>Erreurs et imprécisions influençant directement le calcul de la dose d’insuline d’un repas&nbsp;:</em>
+                <ul>
+                    <li>Erreur lors du réglage de la « formule de calcul ».</li>
+                    <li>Erreurs ou imprécisions lors du réglage des « ratios insuline/glucides » des repas ou des collations.</li>
+                    <li>Absence de vérification régulière des « ratios insuline/glucides » des repas ou des collations.</li>
+                    <li>Saisie d’une quantité de glucides dans une fiche d’insuline ou de glycémie du carnet de surveillance de Diabphone© inadéquate du point de vue de l’horaire (ne correspondant pas à l’horaire du repas ou de la collation prise).</li>
+                </ul>
+                
+                En conséquence, il est indispensable avant toute utilisation du module ITF&nbsp;:
+                <ul>
+                    <li>que vous ayez été formé(e) à l’insulino-thérapie fonctionnelle, que vous ayez compris les principes, les limites et les risques de cette méthode d’adaptation.</li>
+                    <li>que vous ayez acquis de solides connaissances concernant les pourcentages de glucides des aliments et une solide expérience concernant l’estimation du poids des aliments et le calcul des doses d’insuline.</li>
+                    <li>que vous ayez compris le fonctionnement, les limites et les risques du module ITF de l’application Diabphone©.</li>
+                    <li>que les réglages du module ITF, notamment le paramétrage de la formule de calcul et des ratios insuline/ glucides, soient effectués  sous la stricte supervision de votre diabétologue ou votre équipe soignante, lors de sa mise en route puis régulièrement par la suite.</li>
+                    <li>d’avoir l’accord de votre diabétologue ou votre équipe soignante concernant l’utilisation du module ITF.</li>
+                </ul>
+                
+                <p>Il est indispensable lors de l’utilisation du module ITF de vous assurer de l’exactitude des réglages du module ITF de façon régulière, et de toutes les données que vous saisissez lors des repas.</p>
+                
+                <p>Je comprend les informations, avertissements et recommandations figurant ci-dessus et je reconnais vouloir utiliser le module ITF en connaissance de cause. Je reconnais que Diabphone© ne saurait en aucun cas être tenu pour responsable d'aucun dommage d'aucune sorte dû à une utilisation malencontreuse de ce module.</p>
+                <p>Le module optionnel « Insulinothérapie fonctionnelle » faisant partie intégrante du logiciel Diabphone©, je reconnais avoir lu et accepté intégralement et sans réserve le Contrat général d’utilisation de l’application Diabphone©.</p>
+
+</body>
+
+{% endblock center-page %}
+
+

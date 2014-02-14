@@ -1,0 +1,99 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Fonctionnalités du carnet{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+Application de base (sans options)
+ 
+
+Carnet de surveillance
+ pour les diabètes de type 1 ou de type 2
+
+ organisation par colonnes (horaires de surveillance et d’injections) et par lignes (journée), à la manière d’un carnet de surveillance papier
+
+ en mg/dl ou mmol/l
+ pré-sélection à l’ouverture de l’application de la case de glycémie correspondant au jour et à l’heure courants
+
+ possibilité de saisir des commentaires associés aux glycémies ou aux doses d’insuline
+
+ alertes en cas d’hypoglycémie ou d’hyperglycémie importante avec rappel réglable de recherche d’acétone
+
+ possibilité de configurer l’heure de chaque repas
+
+ couleurs du carnet personnalisables
+
+ utilisation en mode portrait ou paysage permettant la visualisation de davantage de colonnes
+
+ saisie du mode de traitement injection(s) ou pompe
+
+ saisie des doses d’insuline :
+
+ insuline basale (lente)
+ insuline rapide ou bolus pour les repas
+ insuline de correction en cas d’hyperglycémie
+
+
+
+Impression des résultats
+ impression du carnet
+
+ sur 2 semaines, 4 semaines ou 3 mois
+ par envoi d’un fichier PDF par mail, ou par AirPrint
+
+ impression d’un diagramme récapitulatif et de statistiques
+
+ sur 2 semaines, 4 semaines ou 3 mois
+ avec seuils d’hypoglycémie, de normoglycémie et d’hyperglycémie réglables
+ par envoi d’un fichier PDF, ou par AirPrint
+
+
+
+Transfert iPhone-iPad
+ synchronisation bidirectionnelle des données avec un iPad par Bluetooth
+
+Module optionnel
+ 
+
+Module d’insulino-thérapie fonctionnelle
+ paramétrage de coefficients ou ratios insuline/glucides en:
+
+ unités d’insuline pour 10g de glucides (U/10g)
+ unités d’insuline pour 15g de glucides (U/15g)
+ unités d’insuline pour 20g de glucides (U/20g)
+ grammes de glucides par Unité d’insuline (g/U)
+
+ réglage des coefficients ou ratios insuline/glucides pour chacun des 3 repas principaux
+
+ petit-déjeuner, déjeuner, dîner
+
+ réglage possible de coefficients ou ratios insuline/glucides pour 3 collations
+
+ matinée, après-midi, soirée
+
+ calcul de la dose d’insuline des repas ou des collations
+
+ base alimentaire simplifiée permettant la saisie rapide d’un repas et le compte des glucides qu’il contient
+
+ saisie d’un repas en fonction de la catégorie des aliments (féculents, légumes, pain…) et de leur pourcentage en glucides (sous-catégories)
+ ajout, modification ou suppression possible de sous-catégories d’aliments
+ personnalisation de la base alimentaire grâce à la saisie possible de vos aliments favoris
+ mémorisation de repas types
+ saisie du poids des aliments en grammes ou en portions, de taille réglable par catégorie d’aliments
+
+ compte des glucides d’un repas directement intégrable au carnet de surveillance
+</body>
+
+{% endblock center-page %}
+
+

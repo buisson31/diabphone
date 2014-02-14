@@ -1,0 +1,123 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+{% block center-page %}
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+<div id='head'>header: width = 100%, height = 40px</div>
+<div id='main'>
+    <div id='left' class="scrollable">
+    	<ul>
+    		<li><a href="#">link1</a></li>
+    		<li><a href="#">link2</a></li>
+    		<li><a href="#">link3</a></li>
+    		<li><a href="#">link4</a></li>
+    		<li><a href="#">link5</a></li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 1</li>
+    		<li>line 994</li>
+    		<li>line 995</li>
+    		<li>line 996</li>
+    		<li>line 997</li>
+    		<li>line 998</li>
+    		<li>line 999</li>
+    		<li>line 1000</li>
+    	</ul>
+    </div>
+    <div id='right'>right: width = 100% - 250px, height = 100%</div>
+</div>
+<div id='foot'>foot: width = 100%, height = 60px</div>
+
+
+<style>
+body   {background:#fff; position:absolute; width:100%; height:100%;}
+#main  {background:#888; height:100%; padding:60px 0 40px; box-sizing:border-box;}
+#head  {background:#f8f; position:absolute; width:100%; height:60px;}
+#left  {background:#ff8; float:left; width:250px; height:400px; }
+#right {background:#8f8; height:100%; overflow:scroll;}
+#foot  {background:#f88; position:absolute; bottom:0; width:100%; height:40px;}
+</style>
+
+<script>
+	document.ontouchmove = function(e) {e.preventDefault()};
+	//left.ontouchmove = function(e) {e.stopPropagation()};
+</script>
+
+<style>
+.scrollable {
+left: 0;
+right: 0;
+bottom: 0;
+overflow: scroll;
+-webkit-overflow-scrolling: touch !important;
+overflow: scroll !important;}
+</style>
+
+<style>
+::-webkit-scrollbar {  
+    width: 20px;  
+}  
+::-webkit-scrollbar-track {  
+    background-color: #eaeaea;  
+    border-left: 1px solid #ccc;  
+}  
+::-webkit-scrollbar-thumb {  
+    background-color: #B03C3F;  
+    border-radius:10px;
+}  
+::-webkit-scrollbar-thumb:hover {  
+    background-color: #aaa;  
+}
+</style>
+
+<style>
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+a:hover {
+    background: lightgreen;
+}
+</style>
+
+{% endblock center-page %}
+
+

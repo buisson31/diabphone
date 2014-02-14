@@ -1,0 +1,37 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Dossier de presse</h1>
+
+<p>
+L'e-santé poursuit son avancée pour les utilisateurs de téléphones mobiles, cette fois-ci dans le domaine du diabète pour les possesseurs d'un iPhone, iPod Touch, ou iPad. Cette maladie chronique exige du patient un suivi rigoureux de sa glycémie (concentration de glucose dans le sang), traditionnellement renseignée dans des carnets organisés en colonnes, afin de mener à bien son traitement. 
+Diabphone (www.diabphone.com) est l’une des seules applications d’auto-surveillance du diabète agencées sous forme de tableau, à l’instar des carnets papier, dépassant ainsi les limitations inhérentes aux smartphones en termes de tableur. « Cette disposition en grille est essentielle pour que le patient puisse analyser ses données dans le temps, et ajuster son traitement en conséquence » explique un diabétologue. 
+L’application, adaptée à tous les types de diabète et de traitements, remplace intégralement le carnet papier. Mais au-delà des fonctions de saisie et d’impression, Diabphone propose des fonctionnalités avancées prolongeant son ergonomie. On peut par exemple envoyer le carnet par e-mail à son médecin, générer des tableaux statistiques, configurer des alertes, ou synchroniser les données entre son iPhone et son iPad. Fait assez rare pour être souligné, un effort de développement a été fait de sorte à adapter entièrement l’application à l’iPad ainsi qu’à l’iPod Touch. 
+M. E., bêta-testeur: « Il est vraiment fiable et bien pensé, et n'a rien à envier à mon ancien carnet papier. ».
+Diabphone propose par ailleurs un module optionnel avec période d’essai. Il s'agit d'un dispositif complet d’insulino-thérapie fonctionnelle, qui permet aux diabétiques de type 1 de calculer, sous la supervision de leur médecin, leurs doses d’insuline en fonction des glucides absorbés pendant les repas. Un second module devrait sortir très prochainement: il permettra une sauvegarde automatique, continue et anonyme des données de l’utilisateur sur un serveur sécurisé, protégeant ainsi ses données en cas de perte de celles-ci ou de vol de l’appareil. En outre, le médecin traitant pourra disposer d’un accès web sécurisé au carnet de son patient, si ce dernier le désire. 
+L’application Diabphone tire avantageusement parti du potentiel des smartphones; nul doute que cette application de grande qualité trouvera sa place dans le paysage en pleine expansion de la télémédecine et de la m-santé. 
+ 
+
+Site Web: http://www.diabphone.com
+Twitter: https://twitter.com/Diabphone
+iTunes: https://t.co/JnqxBM4PrJ
+
+</p>
+</body>
+
+{% endblock center-page %}
+
+

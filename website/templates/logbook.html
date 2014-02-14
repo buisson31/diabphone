@@ -1,0 +1,55 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}CARNET{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+	<div class="main">
+		<span class="shadow-top"></span>
+		<!-- shell -->
+		<div class="shell">
+			<div class="container">
+				<!-- testimonial -->
+				<section class="testimonial">
+					<h2><strong>Diabphone Carnet : le carnet d’autosurveillance du diabète</strong></h2>
+                    <h3>
+                    	Conçu en collaboration étroite avec des diabétologues, Diabphone est un véritable carnet d’autosurveillance du diabète, adapté à tous les diabétiques.
+						Saisissez en quelques secondes vos glycémies, vos doses d’insuline, et vos commentaires éventuels.
+						Analysez ensuite les résultats de votre autosurveillance grâce à une structure en tableau afin de mieux ajuster votre traitement.
+						Imprimez votre carnet, exportez-le au format PDF, envoyez-le par e-mail à votre médecin, synchronisez le avec votre iPad pour un meilleur confort d’utilisation
+					</h3>
+				</section>
+
+				<section class="testimonial">
+					<h2><strong>Diabphone Carnet, récompensé 2 fois aux Trophées de la Santé Mobile 2014</strong></h2>
+                    <h3>
+                    	Meilleure application diabète et coup de coeur des internautes!
+					</h3>
+				</section>
+				
+					<img src="/static/img/Badge_App_Store_FR.png" alt="" width="20%"/>
+
+					<img src="/static/img/carnet_en_images1.png" alt="" width="100%"/>
+					<img src="/static/img/carnet_en_images2.png" alt="" width="100%"/>
+					<img src="/static/img/carnet_en_images3.png" alt="" width="100%"/>
+					<img src="/static/img/carnet_en_images4.png" alt="" width="100%"/>
+				
+			</div>
+			<!-- end of container -->
+		</div>
+		<!-- end of shell -->
+	</div>
+	<!-- end of main -->
+
+
+{% endblock center-page %}
+
+

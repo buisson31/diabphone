@@ -1,0 +1,42 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Contact{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+Excellent ★★★★★
+by JOFFREY DOME - Version 1.2.22 - Dec 12, 2013
+
+Depuis l'application Carb Counter , basé sur la même interface qui n'existe plus malheuresement sur l'app store , je me demandais bien comment j'allais pouvoir faire pour compter le nombre de glucides de mes repas , je suis la méthode d'insulino thérapie fonctionnelle et cette application est idéal pour cela je la recommande vivement au diabetique de type 1 de tous ages , pour ma part j'en ai 22 et sans ce genre d'application ,cela serait beaucoup plus dur pour moi de me soigner correctement merci pour avoir refais une application comme celle ci , merci beaucoup
+
+ah, oui ★★★★★
+by Tonton Henri - Version 1.2.22 - Dec 8, 2013
+
+... c'est bigrement pratique. Vraiment facile d'utilisation. Bien, bien, bien.👍
+
+Top ★★★★★
+by Félix.Martin - Version 1.2.22 - Dec 1, 2013
+
+Facile d'utilisation et super rapide pour compter les glucides. Plus la table alimentaire ultra complète qui me sert à créer ma base d'aliments perso. Tout simplement excellent!
+
+Parfait ★★★★★
+by Paitakana - Version 1.2.22 - Nov 24, 2013
+
+L'application prend parfaitement en compte les paramètres de mon diabete et elle est très simple à utiliser, surtout le comptage des glucides d'un repas. A recommander absolument !
+
+
+</body>
+
+{% endblock center-page %}
+
+

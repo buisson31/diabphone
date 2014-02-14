@@ -1,0 +1,27 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Vidéos{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+
+<iframe width="420" height="340" src="http://www.youtube.com/v/3XSVGLFIFv8"> </iframe>
+
+<iframe width="420" height="340" src="http://www.youtube.com/v/Riwxvyx9pqo"> </iframe>
+
+<iframe width="420" height="340" src="http://www.youtube.com/v/cQj_eSIdlIs"> </iframe>
+
+</body>
+
+{% endblock center-page %}
+
+
