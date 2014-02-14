@@ -1,0 +1,15 @@
+*.class
+*.pyc
+*.pyo
+website/__init__.py
+website/admin.py
+website/models.py
+website/tests.py
+website/urls.py
+website/views.py
+website/__init__.py
+website/admin.py
+website/models.py
+website/tests.py
+website/urls.py
+website/views.py

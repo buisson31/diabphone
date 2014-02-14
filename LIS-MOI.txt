@@ -1,0 +1,11 @@
+
+- Django template inheritance
+https://docs.djangoproject.com/en/dev/topics/templates/#template-inheritance
+{% block myblockname %}{% endblock %} indique que cette partie peut être surchargée dans un template fils par un block appelé myblockname
+
+- organisation des templates
+dh5bp_base.html : HTML5 boilerplate vide
+site_base.html : hérite de dh5bp_base.html, avec le header et le footer
+index.html, logbook.html, calculator.html, presse.html, contact.html : hérite de site_base.html
+
+
