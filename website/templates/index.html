@@ -1,0 +1,153 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}DIABPHONE{% endblock %}
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+	<!-- header -->
+	<header  id="header">
+		<!-- shell -->
+		<div class="shell">
+			<div class="header-inner">
+				<!-- header-cnt -->
+				<div class="header-cnt">
+					<h1 id="logo"><a href="#">Diabphone</a></h1>
+					<p>
+						{% trans "DIABPHONE, applications à destination des diabétiques" %}
+					</p>
+				</div>
+				<!-- end of header-cnt -->
+				<!-- slider -->
+				<div class="slider-holder">
+					<div class="flexslider">
+						<ul class="slides">
+							<li><img src="/static/img/slider1-497x288.jpg" alt="" /></li>
+                            <li><img src="/static/img/slider1-497x288.jpg" alt="" /></li>
+                            <li><img src="/static/img/slider1-497x288.jpg" alt="" /></li>
+                            <li><img src="/static/img/slider1-497x288.jpg" alt="" /></li>
+                            <li><img src="/static/img/slider1-497x288.jpg" alt="" /></li>
+						</ul>
+					</div>
+				</div>
+				<!-- end of slider -->
+				<div class="cl">&nbsp;</div>
+			</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- end of shell -->	
+	</header>
+	<!-- end of header -->
+	
+	<!-- main -->
+	<div class="main">
+		<span class="shadow-top"></span>
+		<!-- shell -->
+		<div class="shell">
+			<div class="container">
+				<!-- testimonial -->
+				<section class="testimonial">
+					<h2><strong>Diabphone Carnet</strong>, récompensé 2 fois aux Trophées de la Santé Mobile 2014</h2>
+                    <h3><a href="http://www.dmdpost.com/nos-evaluations/app-sante/relation-medecin-patient/248-diabphone-carnet.html">Meilleure application diabète et coup de coeur des internautes</a></h3>
+				</section>
+				<!-- testimonial -->
+
+				<section class="blog">
+					<!-- content -->
+					<div class="content">
+						<a href="http://www.dmdpost.com/nos-evaluations/app-sante/relation-medecin-patient/248-diabphone-carnet.html"><img src="/static/css/images/trophee.jpg" alt=""  class="alignleft"/></a>
+						<div class="cnt">
+							<h2><strong>Découvrez la gamme des applications Diabphone</strong></h2>
+							<h3><a href="logbook"><strong>Diabphone Carnet</strong> : le carnet d'auto-surveillance du diabète</a></h3>
+                            <p>Conçu en collaboration étroite avec des diabétologues, Diabphone est un véritable carnet d'autosurveillance du diabète, adapté à tous les diabétiques. Saisissez en quelques secondes vos glycémies, vos doses d’insuline, et vos commentaires éventuels. Analysez ensuite les résultats de votre autosurveillance grâce à une structure en tableau afin de mieux ajuster votre traitement. Imprimez votre carnet, exportez-le au format PDF, envoyez-le par e-mail à votre médecin, synchronisez le avec votre iPad pour un meilleur confort d'utilisation.</p>
+							<br/>
+                            <h3><a href="calculator"><strong>Diabphone Calculateur</strong> : le compteur de glucides et d'insuline</a></h3>
+                            <p>Comptez les glucides de vos repas en quelques clics, grâce à une table alimentaire simplifiée. Calculez les doses d’insuline qui leurs sont associées et ajustez les en fonction de vos glycémies préprandiales. Accédez à la table alimentaire française de référence et à ses 1400 produits. Créez votre propre liste d’aliments favoris. Mémorisez vos repas habituels et modifiez-les lors de vos repas pour un compte encore plus rapide des glucides.
+                            
+                            Avec Diabphone Calculateur© simplifiez-vous le diabète et la pratique de l’insulinothérapie fonctionnelle.</p>
+						</div>
+					</div>
+					<!-- end of content -->
+
+					<!-- sidebar -->
+					<aside class="sidebar">
+						<!-- widget -->
+						<div class="widget">
+							<h3>Latest Blog Posts</h3>
+							<ul>
+								<li>
+									<div class="img-holder">
+										<a href="#"><img src="/static/css/images/post-img.png" alt="" /></a>
+									</div>
+									
+									<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> </a><span>02.02.2012</span></a> </p>
+								</li>
+								<li>
+									<div class="img-holder">
+										<a href="#"><img src="/static/css/images/post-img2.png" alt="" /></a>
+									</div>
+									<p><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> </a><span>01.02.2012</span></a> </p>
+								</li>
+								<li>
+									<div class="img-holder">
+										<a href="#"><img src="/static/css/images/post-img3.png" alt="" /></a>
+									</div>
+									<p>
+									<a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <em class="mobile"> idunt commodo id, hendrerit vitae orci. Suspendisse eget nibh turpis. Sed at accumsan neque praesent purus </em> 
+									<span>30.01.2012</span></a></p>
+								</li>
+							</ul>
+							<div class="cl">&nbsp;</div>
+						</div>
+							<a href="#" class="view">View All</a>
+						<!-- end of widget -->
+					</aside>
+					<!-- end of sidebar -->
+					<div class="cl">&nbsp;</div>
+				</section>	
+				
+				<!-- cols -->
+				<section class="cols">
+					<div class="col">
+						<h3>Témoignages</h3>
+						<img src="/static/css/images/cols-img2.png" alt="" class="alignleft"/>
+						<div class="col-cnt">
+							<p>Excellente application ★★★★★ by Tg7701 - Version 1.2.21 - Jan 29, 2014</p>
+							<p>Très adaptée aux besoins du suivi de la glycémie.</p>
+						</div>
+						<a href="testimonies" class="view">Voir plus</a>
+					</div>
+					<div class="col">
+						<h3>Diabphone en vidéo</h3>
+						<iframe width="210" height="172" src="http://www.youtube.com/v/Riwxvyx9pqo"> </iframe>
+						<a href="videos" class="view">Voir plus</a>
+					</div>
+					<div class="col">
+						<h3>Tutorials</h3>
+						<img src="/static/css/images/cols-img2.png" alt="" class="alignleft"/>
+						<div class="col-cnt">
+							<p>Comment faire les régalges de base</p>
+							<p>Comment adapter les coefficients</p>
+						</div>
+						<a href="tutorials" class="view">Voir plus</a>
+					</div>
+					<div class="cl">&nbsp;</div>
+				</section>
+				<!-- end of cols -->
+			</div>
+		<!-- end of shell -->
+		</div>
+		<!-- end of container -->
+	</div>
+	<!-- end of main -->
+
+
+{% endblock center-page %}
+
+

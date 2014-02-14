@@ -1,0 +1,37 @@
+
+{% extends 'site_base.html' %}
+{% load url from future %}
+{% load i18n %}
+{% load staticfiles %} {# il faut toujours le mettre, même s'il est dans le template parent #}
+
+
+{# surcharge du block 'title' défini dans dh5bp_base.html #}
+{% block title %}Mentions légales{% endblock %}
+
+
+{# surcharge du block 'center-page' défini dans site_base.html #}
+{% block center-page %}
+
+<body>
+	
+<h1>Mentions légales</h1>
+
+http://www.diabphone.com appartient à la S.A.R.L. Diabphone, au capital de 4000€.
+
+Immatriculation : 789224854 RCS Toulouse.
+
+Activité : Création et diffusion d’outils informatiques dans le domaine des maladies chroniques et de la santé.
+
+Contact : contact@diabphone.com.
+
+En charge de la publication : M. Tarek BUISSON, contact@diabphone.com.
+
+Hébergeur : online.net – Online SAS – 75366 Paris CEDEX 08 – RCS Paris B 433 115 904.
+
+Ce site Internet a pour objet de fournir des renseignements sur l’application Diabphone©, un accès anonyme et sécurisé pour les médecins aux données de leurs patients hébergées sur les serveurs de Diabphone©, ainsi qu’un accès vers le logiciel sur l’App Store d’Apple.
+
+</body>
+
+{% endblock center-page %}
+
+
